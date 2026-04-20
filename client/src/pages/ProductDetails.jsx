@@ -1,0 +1,1918 @@
+// // import React, { useState, useMemo, useEffect } from "react";
+// // import { useParams, useNavigate } from "react-router";
+// // import Navbar from "../components/Navbar";
+// // import Breadcrumbs from "../components/Breadcrumbs";
+// // import Footer from "../sections/Footer";
+// // import Ratings from "../components/Ratings";
+// // import Reviews from "../components/Reviews";
+// // import CustomerReview from "../components/CustomerReview";
+// // import Card from "../components/Card";
+// // import { Heart, Minus, PackageOpen, Plus, Trash2 } from "lucide-react";
+
+// // import { useDispatch, useSelector } from "react-redux";
+// // import {
+// //   addToCart,
+// //   buyNow,
+// //   decreaseQty,
+// //   increaseQty,
+// // } from "../redux/cart/cartSlice";
+// // import { addToWishlist, removeFromWishlist } from "../redux/cart/wishlistSlice";
+// // import { formatPrice, getPrices } from "../utils/homePageUtils";
+// // import { Swiper, SwiperSlide } from "swiper/react";
+// // import { Navigation, Thumbs } from "swiper/modules";
+// // import "swiper/css";
+// // import "swiper/css/navigation";
+// // import "swiper/css/thumbs";
+// // import EmptyState from "../components/EmptyState";
+// // import axiosInstance from "../api/axiosInstance";
+// // import AddReviewsModel from "../components/AddReviewsModel";
+
+// // function ProductDetails() {
+// //   const { uuid } = useParams();
+// //   console.log("URL ID from useParams:", uuid);
+// //   const navigate = useNavigate();
+// //   const dispatch = useDispatch();
+
+// //   const [product, setProduct] = useState(null); // change
+// //   const [similarProducts, setSimilarProducts] = useState([]);
+// //   const [selectedVariant, setSelectedVariant] = useState(null);
+// //   const [selectedColor, setSelectedColor] = useState(null);
+// //   const [selectedSize, setSelectedSize] = useState(null);
+// //   const [isLoading, setIsLoading] = useState(true);
+// //   const [mainImageIndex, setMainImageIndex] = React.useState(0);
+// //   const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
+// //   const [totalCartItems, setTotalCartItems] = useState(0);
+// //   const [inWishlist, setInWishlist] = useState(false);
+// //   const { cartItems, totalItems } = useSelector((s) => s.cart);
+// //   const { wishlistItems, setwishlistItems } = useSelector((s) => s.wishlist);
+
+// //   // open add reviews model
+// //   const [openAddReviewModal, setOpenAddReviewModal] = useState(false);
+// //   const [selectedReview, setSelectedReview] = useState(null); // optional if editing
+
+// //   const getSimilarProducts = (all, found, uuid) => {
+// //     if (!found) return [];
+
+// //     // Normalize text for matching
+// //     const normalize = (str) =>
+// //       str
+// //         ?.toLowerCase()
+// //         .replace(/[^a-z0-9 ]/g, " ")
+// //         .trim() || "";
+
+// //     const foundTitleWords = normalize(found.title).split(" ");
+
+// //     // 🔥 Step 0: Filter products only from same category
+// //     const sameCategoryList = all.filter(
+// //       (p) =>
+// //         p.uuid !== uuid && normalize(p.category) === normalize(found.category),
+// //     );
+
+// //     // Now use ONLY same-category products for similarity
+// //     const list = sameCategoryList;
+
+// //     // Same subcategory
+// //     const sameSub = list.filter(
+// //       (p) => normalize(p.subcategory) === normalize(found.subcategory),
+// //     );
+// //     if (sameSub.length > 0) return sameSub.slice(0, 10);
+
+// //     // Title keyword matching
+// //     const similarByTitle = list.filter((p) => {
+// //       const title = normalize(p.title);
+// //       return foundTitleWords.some((w) => title.includes(w));
+// //     });
+
+// //     if (similarByTitle.length > 0) return similarByTitle.slice(0, 10);
+
+// //     // Fallback (never empty), but still within same category
+// //     return list.slice(0, 10);
+// //   };
+
+// //   // FETCH PRODUCT + SIMILAR PRODUCTS
+// //   useEffect(() => {
+// //     const fetchProduct = async () => {
+// //       try {
+// //         setIsLoading(true);
+// //         console.log("Fetching all products...");
+// //         const res = await axiosInstance.get("/products/all"); // Added /api prefix
+// //         const all = res.data;
+// //         console.log("All products:", all);
+
+// //         // FIXED: Use uuid instead of id
+// //         const found = all.find((p) => p._id === uuid || p.uuid === uuid);
+
+// //         console.log("Found product:", found);
+// //         setProduct(found || null);
+
+// //         // set variant
+// //         if (found?.variants?.length > 0) {
+// //           setSelectedVariant(found.variants[0]);
+// //         }
+
+// //         // SIMILAR PRODUCTS - pass the found product's uuid
+// //         if (found) {
+// //           const similar = getSimilarProducts(
+// //             all,
+// //             found,
+// //             found.uuid || found._id,
+// //           );
+// //           setSimilarProducts(similar);
+// //           console.log("Similar products:", similar);
+// //         }
+// //       } catch (err) {
+// //         console.log("Product fetch error:", err);
+// //         setProduct(null);
+// //       } finally {
+// //         setIsLoading(false);
+// //       }
+// //     };
+
+// //     if (uuid) {
+// //       fetchProduct();
+// //     } else {
+// //       console.log("No UUID provided");
+// //       setIsLoading(false);
+// //     }
+// //   }, [uuid]);
+
+// //   const variantId = selectedVariant?.variantId || selectedVariant?._id;
+
+// //   const inCart = useMemo(() => {
+// //     if (!selectedVariant || !product) return false;
+// //     return cartItems.some(
+// //       (i) => i.uuid === product.uuid && i.variantId === variantId,
+// //     );
+// //   }, [cartItems, product?.uuid, selectedVariant, variantId]);
+
+// //   const qtyInCart =
+// //     cartItems.find((i) => i.uuid === product.uuid && i.variantId === variantId)
+// //       ?.quantity || 0;
+
+// //   //  -----------------------------
+// //   // IF LOADING
+// //   // -----------------------------
+// //   if (isLoading) {
+// //     return (
+// //       <>
+// //         <Navbar />
+// //         <EmptyState heading="Loading..." description="Fetching product..." />
+// //         <Footer />
+// //       </>
+// //     );
+// //   }
+
+// //   if (!product || !selectedVariant) {
+// //     return (
+// //       <>
+// //         <Navbar />
+// //         <Breadcrumbs title={"Not Found"} />
+// //         <EmptyState
+// //           heading="Not Found"
+// //           description="The product you’re looking for may have been removed, is out of
+// //               stock, or the link is broken. Try browsing our categories or
+// //               return to the home page.."
+// //           icon={PackageOpen}
+// //           ctaLabel="Go Home"
+// //           ctaLink={"/"}
+// //         />
+// //         <Footer />
+// //       </>
+// //     );
+// //   }
+
+// //   const avgRating =
+// //     product?.reviews?.length > 0
+// //       ? product.reviews.reduce((sum, review) => sum + review.rating, 0) /
+// //         product.reviews.length
+// //       : 0;
+
+// //   const handleBuyNow = (product) => {
+// //     dispatch(buyNow(product)); // adds single item, sets buyNowMode
+// //     navigate("/checkout/payment");
+// //   };
+
+// //   const handleVariantSelect = (key, value) => {
+// //     const match = product.variants.find((v) => {
+// //       return (
+// //         (key === "color" ? v.variantValue === value : true) &&
+// //         (key === "dimension" ? v.dimension === value : true) &&
+// //         (key === "type" ? v.variantType === value : true)
+// //       );
+// //     });
+
+// //     if (match) {
+// //       setSelectedVariant(match);
+// //       setMainImageIndex(0);
+// //     }
+// //   };
+
+// //   const getImageUrl = (img) => {
+// //     if (!img) return "/placeholder.png";
+
+// //     // Case 1: Full Cloudinary or external URL
+// //     if (img.startsWith("http")) return img;
+
+// //     // Case 2: Public folder asset (/Reflection1.jpg)
+// //     if (img.startsWith("/")) return img;
+
+// //     // Case 3: Server-stored images (uploads/image.png)
+// //     return `http://localhost:5000${img}`;
+// //   };
+
+// //   const colorOptions = [
+// //     ...new Set(
+// //       (product?.variants || []).map((v) => v?.variantColor).filter(Boolean),
+// //     ),
+// //   ];
+
+// //   const onSelectColor = (color) => {
+// //     setSelectedColor(color);
+
+// //     const match = findVariant(color, selectedSize) || findVariant(color, null);
+// //     if (match) {
+// //       setSelectedVariant(match);
+// //       setMainImageIndex(0);
+// //       thumbsSwiper?.slideTo?.(0);
+// //     }
+// //   };
+
+// //   const sizeOptions = [
+// //     ...new Set(
+// //       (product?.variants || [])
+// //         .map((v) =>
+// //           `${v.variantLength}x${v.variantBreadth} ${v.variantDimensionunit || ""}`.trim(),
+// //         )
+// //         .filter(Boolean),
+// //     ),
+// //   ];
+
+// //   const onSelectSize = (sizeStr) => {
+// //     setSelectedSize(sizeStr);
+
+// //     const match =
+// //       findVariant(selectedColor, sizeStr) || findVariant(null, sizeStr);
+// //     if (match) {
+// //       setSelectedVariant(match);
+// //       setMainImageIndex(0);
+// //       thumbsSwiper?.slideTo?.(0);
+// //     }
+// //   };
+
+// //   // for demo
+
+// //   const isDemo = true;
+
+// //   const handleOpenAddReview = () => {
+// //     setSelectedReview(null);
+// //     setOpenAddReviewModal(true);
+// //   };
+
+// //   const handleCloseReview = () => {
+// //     setOpenAddReviewModal(false);
+// //     setSelectedReview(null);
+// //   };
+
+// //   const images = selectedVariant?.variantImage?.length
+// //     ? selectedVariant.variantImage
+// //     : [];
+
+// //   const mrp = Number(selectedVariant?.variantMrp || 0);
+// //   const sp = Number(selectedVariant?.variantSellingPrice || 0);
+// //   const discount = Number(selectedVariant?.variantDiscount || 0);
+
+// //   // fallback effective price
+// //   const effectivePrice =
+// //     sp > 0 ? sp : discount > 0 ? Math.round(mrp * (1 - discount / 100)) : mrp;
+
+// //   const stock = Number(selectedVariant?.variantAvailableStock || 0);
+// //   const outOfStock = stock <= 0;
+
+// //   useEffect(() => {
+// //     if (!product?.variants?.length) return;
+
+// //     const v0 = product.variants[0];
+// //     setSelectedVariant(v0);
+
+// //     setSelectedColor(v0?.variantColor || null);
+// //     const s0 =
+// //       `${v0?.variantLength}x${v0?.variantBreadth} ${v0?.variantDimensionunit || ""}`.trim();
+// //     setSelectedSize(s0);
+
+// //     setMainImageIndex(0);
+// //     thumbsSwiper?.slideTo?.(0);
+// //   }, [product]);
+
+// //   const normalizeSize = (v) =>
+// //     `${v?.variantLength}x${v?.variantBreadth} ${v?.variantDimensionunit || ""}`.trim();
+
+// //   const findVariant = (color, sizeStr) => {
+// //     return (product?.variants || []).find((v) => {
+// //       const vColor = v?.variantColor || "";
+// //       const vSize = normalizeSize(v);
+// //       return (!color || vColor === color) && (!sizeStr || vSize === sizeStr);
+// //     });
+// //   };
+
+// //   const variantId = selectedVariant?.variantId || selectedVariant?._id;
+
+// //   return (
+// //     <>
+// //       <Navbar />
+// //       <Breadcrumbs
+// //         category={product.category}
+// //         subcategory={product.subcategory}
+// //         title={product.title}
+// //       />
+// //       <section className="lg:px-20 md:px-[60px] px-4 py-6 ">
+// //         <AddReviewsModel
+// //           open={openAddReviewModal}
+// //           review={selectedReview}
+// //           product={{
+// //             uuid: product?.uuid,
+// //             title: product?.title,
+// //             selectedVariant,
+// //             image: getImageUrl(
+// //               selectedVariant?.images?.[0] ||
+// //                 product?.images?.[0] ||
+// //                 selectedVariant?.variantImage?.[0],
+// //             ),
+// //           }}
+// //           onClose={handleCloseReview}
+// //           onSave={(newReviewOrUpdated) => {
+// //             setProduct((prev) => ({
+// //               ...prev,
+// //               reviews: selectedReview
+// //                 ? prev.reviews.map((r) =>
+// //                     r._id === newReviewOrUpdated._id ? newReviewOrUpdated : r,
+// //                   )
+// //                 : [newReviewOrUpdated, ...(prev.reviews || [])],
+// //             }));
+// //             handleCloseReview();
+// //           }}
+// //         />
+// //         <div className="flex lg:flex-row flex-col gap-8 items-start max-lg:items-center">
+// //           {/* Thumbnails */}
+// //           <div className="lg:sticky top-20 flex md:gap-8 gap-4 max-md:flex-col-reverse max-lg:w-full">
+// //             {/* Thumbnails Swiper */}
+// //             <div className="flex flex-col max-md:flex-row md:gap-4 max-md:justify-between rounded-lg">
+// //               <Swiper
+// //                 onSwiper={setThumbsSwiper}
+// //                 spaceBetween={10}
+// //                 slidesPerView="auto"
+// //                 watchSlidesProgress
+// //                 direction="vertical"
+// //                 breakpoints={{
+// //                   0: { direction: "horizontal", slidesPerView: 4 },
+// //                   768: { direction: "vertical" },
+// //                 }}
+// //                 className="!w-full !h-auto md:!h-[460px]"
+// //               >
+// //                 {images.map((img, idx) => (
+// //                   <SwiperSlide key={idx} className="!w-auto !h-auto">
+// //                     {/* Outer wrapper holds border + ring */}
+// //                     <div
+// //                       className={`relative w-20 h-20 cursor-pointer transform transition duration-300 flex items-center justify-center
+// //                           ${
+// //                             mainImageIndex === idx
+// //                               ? "border-2 border-[#977c2d] shadow-md rounded-md"
+// //                               : "border-2 border-transparent hover:border-gray-200 rounded-md"
+// //                           }`}
+// //                       onClick={() => {
+// //                         setMainImageIndex(idx);
+// //                         thumbsSwiper.slideTo(idx);
+// //                       }}
+// //                     >
+// //                       <div className="w-full h-full overflow-hidden rounded-md">
+// //                         <img
+// //                           src={getImageUrl(img)}
+// //                           alt={`${product.title} ${idx}`}
+// //                           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+// //                         />
+// //                       </div>
+
+// //                       {mainImageIndex === idx && (
+// //                         <div className="absolute inset-0 bg-[#D49A06]/10 pointer-events-none transition-opacity duration-300 rounded-md" />
+// //                       )}
+// //                     </div>
+// //                   </SwiperSlide>
+// //                 ))}
+// //               </Swiper>
+// //             </div>
+
+// //             {/* Main Image Swiper */}
+// //             <div className="relative">
+// //               <Swiper
+// //                 modules={[Navigation, Thumbs]}
+// //                 thumbs={{
+// //                   swiper:
+// //                     thumbsSwiper && !thumbsSwiper.destroyed
+// //                       ? thumbsSwiper
+// //                       : null,
+// //                 }}
+// //                 spaceBetween={10}
+// //                 loop={false}
+// //                 onSlideChange={(swiper) =>
+// //                   setMainImageIndex(swiper.activeIndex)
+// //                 }
+// //                 initialSlide={mainImageIndex}
+// //                 className="xl:min-w-[600px] xl:h-[600px] md:!w-[500px] w-full"
+// //               >
+// //                 {images.map((img, idx) => (
+// //                   <SwiperSlide key={idx}>
+// //                     <img
+// //                       src={getImageUrl(img)}
+// //                       alt={`${product.title} ${idx}`}
+// //                       className="w-full h-full object-cover"
+// //                     />
+// //                   </SwiperSlide>
+// //                 ))}
+// //               </Swiper>
+
+// //               {/* Wishlist Button */}
+// //               <button
+// //                 className="absolute bg-white shadow-md md:shadow-lg md:bg-white group-hover:block active:scale-110 transition-all ease-in-out duration-300 md:p-2 p-2 rounded-full text-xs top-1 right-1 z-20 cursor-default"
+// //                 onClick={(e) => {
+// //                   e.stopPropagation();
+// //                   const inWishlist = wishlistItems.some(
+// //                     (i) =>
+// //                       i.uuid === product.uuid &&
+// //                       i.variantId === selectedVariant.variantId,
+// //                   );
+// //                   if (inWishlist) {
+// //                     dispatch(
+// //                       removeFromWishlist({
+// //                         uuid: product.uuid,
+// //                         variantId: selectedVariant.variantId,
+// //                       }),
+// //                     );
+// //                   } else {
+// //                     dispatch(
+// //                       addToWishlist({
+// //                         uuid: product.uuid,
+// //                         variantId: selectedVariant.variantId,
+// //                         title: product.title,
+// //                         basePrice: selectedVariant.price,
+// //                         stockQuantity: selectedVariant.stockQuantity,
+// //                         discountPercent: product.discountPercent,
+// //                         image: product.images,
+// //                         deliverBy: product.deliverBy,
+// //                         selectedOptions: {
+// //                           color: selectedVariant.color,
+// //                           type: selectedVariant.type,
+// //                           dimension: selectedVariant.dimension,
+// //                         },
+// //                       }),
+// //                     );
+// //                   }
+// //                 }}
+// //               >
+// //                 <Heart
+// //                   className="w-8 h-8 p-1 cursor-pointer"
+// //                   fill={
+// //                     wishlistItems.some(
+// //                       (i) =>
+// //                         i.uuid === product.uuid &&
+// //                         i.variantId === selectedVariant.variantId,
+// //                     )
+// //                       ? "red"
+// //                       : "white"
+// //                   }
+// //                   stroke={
+// //                     wishlistItems.some(
+// //                       (i) =>
+// //                         i.uuid === product.uuid &&
+// //                         i.variantId === selectedVariant.variantId,
+// //                     )
+// //                       ? "red"
+// //                       : "black"
+// //                   }
+// //                   strokeWidth={1}
+// //                 />
+// //               </button>
+// //             </div>
+// //           </div>
+
+// //           {/* Details */}
+// //           <div className="w-full">
+// //             <h1 className="lg:text-4xl md:text-3xl text-2xl font-medium md:font-semibold text-gray-900 py-2 leading-7">
+// //               {product.productTittle}
+// //             </h1>
+// //             {(isDemo || product?.reviews?.length > 0) && (
+// //               <div className=" border-gray-200 pb-2 flex items-center gap-4">
+// //                 <div className="flex items-center gap-1">
+// //                   <span className="text-2xl font-semibold text-gray-900">
+// //                     {avgRating ?? "—"}
+// //                   </span>
+// //                   <span className="text-gray-500 text-sm">/5</span>
+// //                 </div>
+// //                 <div className="flex flex-col gap-1">
+// //                   <Ratings size={20} avgRating={avgRating} />
+// //                   <span className="text-sm text-gray-500">
+// //                     <span>Based on </span>
+// //                     {product?.reviews?.length ?? 0}{" "}
+// //                     {product?.reviews?.length === 1 ? "review" : "reviews"}
+// //                   </span>
+// //                 </div>
+// //                 <div className="h-6 w-px bg-gray-300"></div>x
+// //                 <button
+// //                   className="text-sm font-medium text-[#1C3753] hover:text-[#1C3753] transition-colors underline"
+// //                   onClick={() =>
+// //                     document
+// //                       .getElementById("reviews-section")
+// //                       ?.scrollIntoView({ behavior: "smooth" })
+// //                   }
+// //                 >
+// //                   See all reviews
+// //                 </button>
+// //               </div>
+// //             )}
+
+// //             {/* Product Price & details */}
+// //             <div className="py-2 border-b">
+// //               <div className="text-neural-700 font-medium">
+// //                 <span className="mr-2 text-[28px]">₹{effectivePrice}</span>
+// //                 {mrp > effectivePrice ? (
+// //                   <span className="line-through text-[#787878] font-normal text-[16px]">
+// //                     ₹{mrp}
+// //                   </span>
+// //                 ) : null}
+// //                 {discount > 0 ? (
+// //                   <span className="ml-2 text-[#168408] text-sm">
+// //                     {Math.round(discount)}% Off
+// //                   </span>
+// //                 ) : null}
+// //               </div>
+// //               <span className="text-[#686868] text-xs">
+// //                 inclusive of all taxes
+// //               </span>
+// //             </div>
+
+// //             {/* Color Options */}
+// //             {colorOptions.length > 0 && (
+// //               <div className="mt-2">
+// //                 <h3 className="font-medium">
+// //                   Color:{" "}
+// //                   <span className="text-[#1C1C1C] font-medium">
+// //                     {selectedVariant?.variantColor || "-"}
+// //                   </span>
+// //                 </h3>
+
+// //                 <div className="flex gap-2 mt-2 flex-wrap">
+// //                   {colorOptions.map((c) => (
+// //                     <button
+// //                       key={c}
+// //                       className={`px-3 py-1 rounded-md border border-[#1C3753] text-sm
+// //             ${
+// //               selectedVariant?.variantColor === c
+// //                 ? "border-2 border-[#1C3753] bg-[#D5E5F5] text-[#1C3753]"
+// //                 : "bg-white hover:bg-gray-200"
+// //             }`}
+// //                       onClick={() => onSelectColor(c)}
+// //                     >
+// //                       {c}
+// //                     </button>
+// //                   ))}
+// //                 </div>
+// //               </div>
+// //             )}
+
+// //             {/* size Options */}
+// //             {sizeOptions.length > 0 && (
+// //               <div className="mt-3 border-b pb-3">
+// //                 <h3 className="font-medium">
+// //                   Size:{" "}
+// //                   <span className="text-[#1C1C1C] font-medium">
+// //                     {`${selectedVariant?.variantLength}x${selectedVariant?.variantBreadth} ${selectedVariant?.variantDimensionunit || ""}`}
+// //                   </span>
+// //                 </h3>
+
+// //                 <div className="flex gap-2 mt-2 flex-wrap">
+// //                   {sizeOptions.map((s) => (
+// //                     <button
+// //                       key={s}
+// //                       className={`px-3 py-1 rounded-md border border-[#1C3753] text-sm
+// //             ${
+// //               s ===
+// //               `${selectedVariant?.variantLength}x${selectedVariant?.variantBreadth} ${selectedVariant?.variantDimensionunit || ""}`.trim()
+// //                 ? "border-2 border-[#1C3753] bg-[#D5E5F5] text-[#1C1C1C]"
+// //                 : "bg-white hover:bg-[#D5E5F5]"
+// //             }`}
+// //                       onClick={() => onSelectSize(s)}
+// //                     >
+// //                       {s}
+// //                     </button>
+// //                   ))}
+// //                 </div>
+// //               </div>
+// //             )}
+
+// //             {/* Type Options */}
+// //             {/* <div className="mt-5">
+// //               <h3 className="font-medium">Type</h3>
+// //               <div className="flex gap-2 mt-2 flex-wrap">
+// //                 {types.map((t, i) => (
+// //                   <button
+// //                     key={i}
+// //                     className={`px-3 py-1 rounded-full border text-sm
+// //             ${
+// //               selectedVariant.variantType === t
+// //                 ? "border-2 border-gray-900 bg-gray-900 text-white"
+// //                 : "bg-gray-100 hover:bg-gray-200"
+// //             }
+// //           `}
+// //                     onClick={() => handleVariantSelect("type", t)}
+// //                   >
+// //                     {t}
+// //                   </button>
+// //                 ))}
+// //               </div>
+// //             </div> */}
+
+// //             <div className="flex gap-3 py-4 border-b">
+// //               {outOfStock ? (
+// //                 <button
+// //                   disabled
+// //                   className="px-6 py-2 bg-gray-300 text-gray-600 rounded-full cursor-not-allowed"
+// //                 >
+// //                   Out of Stock
+// //                 </button>
+// //               ) : inCart ? (
+// //                 <>
+// //                   <div className="flex items-center gap-3 px-4 border-[#1C3753] ring-1 ring-[#1C3753]/50 shadow-md p-1 rounded-md transition-all ease-in ">
+// //                     {/* ➖ Decrease */}
+// //                     <button
+// //                       onClick={(e) => {
+// //                         e.stopPropagation();
+// //                         dispatch(
+// //                           decreaseQty({
+// //                             uuid: product.uuid,
+// //                             variantId: selectedVariant.variantId,
+// //                           }),
+// //                         );
+// //                       }}
+// //                       className="w-6 h-6 flex items-center justify-center"
+// //                       disabled={isLoading}
+// //                     >
+// //                       {cartItems.find(
+// //                         (i) =>
+// //                           i.uuid === product.uuid &&
+// //                           i.variantId === selectedVariant.variantId,
+// //                       )?.quantity === 1 ? (
+// //                         <Trash2 size={16} />
+// //                       ) : (
+// //                         <Minus size={16} />
+// //                       )}
+// //                     </button>
+
+// //                     {/* Quantity */}
+// //                     <span className="w-6 text-center">
+// //                       {cartItems.find(
+// //                         (i) =>
+// //                           i.uuid === product.uuid &&
+// //                           i.variantId === selectedVariant.variantId,
+// //                       )?.quantity || 0}
+// //                     </span>
+
+// //                     {/*  Increase */}
+// //                     <button
+// //                       onClick={(e) => {
+// //                         e.stopPropagation();
+// //                         // alert("ddsjg");
+// //                         // console.log("Increase payload", {
+// //                         //   uuid: product.uuid,
+// //                         //   variantId: selectedVariant.variantId,
+// //                         // });
+
+// //                         // console.log("Current cart items:", cartItems);
+
+// //                         dispatch(
+// //                           increaseQty({
+// //                             uuid: product.uuid,
+// //                             variantId: selectedVariant.variantId,
+// //                           }),
+// //                         );
+// //                       }}
+// //                       className="w-6 h-6 flex items-center justify-center"
+// //                       disabled={isLoading}
+// //                     >
+// //                       <Plus size={16} />
+// //                     </button>
+// //                   </div>
+// //                 </>
+// //               ) : (
+// //                 // add on cart
+// //                 <button
+// //                   onClick={() => {
+// //                     console.log("ADDING TO CART:", {
+// //                       uuid: product.uuid,
+// //                       variantId: selectedVariant.variantId,
+// //                       selectedVariant,
+// //                     });
+
+// //                     const { base, effective, discountPercent } =
+// //                       getPrices(product);
+
+// //                     setIsLoading(true);
+// //                     setTimeout(() => {
+// //                       dispatch(
+// //                         addToCart({
+// //                           uuid: product.uuid,
+
+// //                           variantId:
+// //                             selectedVariant.variantId || selectedVariant._id,
+
+// //                           title: product.title,
+
+// //                           // ✅ Correct discount-aware pricing
+// //                           basePrice: base,
+// //                           effectivePrice: effective,
+// //                           discountPercent,
+
+// //                           // 🚀 Stock
+// //                           stockQuantity:
+// //                             selectedVariant.variantQuantity ?? 999999,
+
+// //                           // 🚀 Image
+// //                           image:
+// //                             selectedVariant.variantImage?.[0] ||
+// //                             "/placeholder.png",
+
+// //                           deliverBy: product.deliverBy,
+
+// //                           selectedOptions: {
+// //                             color: selectedVariant.color,
+// //                             type: selectedVariant.variantType,
+// //                             dimension: selectedVariant.variantValue,
+// //                           },
+// //                         }),
+// //                       );
+
+// //                       setIsLoading(false);
+// //                     }, 200);
+// //                   }}
+// //                   disabled={isLoading}
+// //                   className="px-6 py-2 bg-white hover:bg-[#1C3753] hover:text-white
+// // transform transition-all duration-200 ease-in-out
+// // hover:scale-105 text-black border border-[#1C3753] rounded-md"
+// //                 >
+// //                   {isLoading ? "Adding..." : "Add to Cart"}
+// //                 </button>
+// //               )}
+
+// //               {/* 🛒 Buy Now */}
+// //               <button
+// //                 className="px-6 py-2 bg-[#1C3753] text-white hover:bg-[#1C3753] hover:text-white
+// // transform transition-all duration-200 ease-in-out
+// // hover:scale-105 border border-[#1C3753] rounded-md"
+// //                 onClick={() => handleBuyNow(product, selectedVariant)}
+// //                 disabled={outOfStock || isLoading}
+// //               >
+// //                 Buy now
+// //               </button>
+// //             </div>
+
+// //             {/* Delivery */}
+// //             {/* <div className="py-5 border-b border-gray-200">
+// //               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+// //                 <div className="flex-1">
+// //                   <h3 className="text-lg font-semibold text-gray-800 mb-1">
+// //                     Delivery Options
+// //                   </h3>
+// //                   <p className="text-sm text-gray-600">
+// //                     Enter your PIN code to check delivery time & COD
+// //                     availability
+// //                   </p>
+// //                 </div>
+
+// //                 <div className="flex items-center gap-3">
+// //                   <div className="relative flex-1 max-w-[200px]">
+// //                     <input
+// //                       type="text"
+// //                       inputMode="numeric"
+// //                       pattern="[0-9]*"
+// //                       maxLength={6}
+// //                       className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm focus:ring-2 focus:ring-[#D6AE1F] focus:border-[#D6AE1F] outline-none transition-all"
+// //                       placeholder="Enter PIN code"
+// //                     />
+// //                     <svg
+// //                       className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400"
+// //                       fill="none"
+// //                       viewBox="0 0 24 24"
+// //                       stroke="currentColor"
+// //                     >
+// //                       <path
+// //                         strokeLinecap="round"
+// //                         strokeLinejoin="round"
+// //                         strokeWidth={2}
+// //                         d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+// //                       />
+// //                       <path
+// //                         strokeLinecap="round"
+// //                         strokeLinejoin="round"
+// //                         strokeWidth={2}
+// //                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+// //                       />
+// //                     </svg>
+// //                   </div>
+
+// //                   <button className="px-4 py-2 bg-[#D6AE1F] hover:bg-[#e2b659] text-white text-sm font-medium rounded-md shadow-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-1">
+// //                     Check
+// //                   </button>
+// //                 </div>
+// //               </div>
+
+// //               <div className="mt-3 p-3 bg-gradient-to-r from-green-100 to-transparent text-sm text-green-800 rounded-md">
+// //                 Delivery expected in {product.deliverBy} Days // This is not
+// //                 deffine
+// //               </div>
+// //             </div> */}
+
+// //             {/* Specifications */}
+// //             <div className="py-4 border-b">
+// //               <h3 className="font-medium">Product Specifications</h3>
+// //               <div className="text-[14px] mt-2">
+// //                 <p className="text-[14px] text-[#6C6B6B] mt-2">
+// //                   Product Size: -{" "}
+// //                   <span className="text-[#171515]">
+// //                     {normalizeSize(selectedVariant) || "-"}
+// //                   </span>
+// //                 </p>
+// //                 <p className="text-[14px] text-[#6C6B6B]">
+// //                   Item Weight -{" "}
+// //                   <span className="text-[#171515] capitalize">
+// //                     {product.weight || "-"}
+// //                   </span>
+// //                 </p>
+
+// //                 <p className="text-[14px] text-[#6C6B6B]">
+// //                   Color:{" "}
+// //                   <span className="text-[#171515] capitalize">
+// //                     {selectedVariant?.variantColor || "-"}
+// //                   </span>
+// //                 </p>
+// //                 <p className="capitalize">
+// //                   <span className="text-[#6C6B6B]">Material</span> -{" "}
+// //                   {product.materialType}
+// //                 </p>
+// //                 <p className="capitalize">
+// //                   <span className="text-[#6C6B6B]">Category:</span> -{" "}
+// //                   {product.category || "-"}
+// //                 </p>
+// //                 <p className="capitalize">
+// //                   <span className="text-[#6C6B6B]">Sub-Category:</span> -{" "}
+// //                   {product.subcategory || "-"}
+// //                 </p>
+// //                 <p className="capitalize">
+// //                   <span className="text-[#6C6B6B]">Return Policy</span> -{" "}
+// //                   {product && true ? "Easy 7 days return available" : "-"}
+// //                 </p>
+// //                 <p
+// //                   className={`font-medium ${stock > 0 ? "text-green-600" : "text-red-600"}`}
+// //                 >
+// //                   <span className="text-[#6C6B6B]">Stock - </span>
+// //                   {stock > 0 ? `${stock} available` : "Out of Stock"}
+// //                 </p>
+// //               </div>
+// //             </div>
+
+// //             {/* About */}
+// //             <div className="py-4">
+// //               <h3 className="font-medium">Product Description</h3>
+
+// //               {/* If bulletPoints exist, show them as a list, else show description */}
+// //               {product.bulletPoints && product.bulletPoints.length > 0 ? (
+// //                 <ul className="list-disc list-inside text-[#6C6B6B] mt-2 space-y-1">
+// //                   {product.bulletPoints.map((point, idx) => (
+// //                     <li key={idx}>{point}</li>
+// //                   ))}
+// //                 </ul>
+// //               ) : (
+// //                 <p className="text-[#6C6B6B] mt-2">{product.description}</p>
+// //               )}
+// //             </div>
+
+// //             {/* Reviews */}
+// //             <div className="py-4" id="reviews-section">
+// //               <h3 className="text-lg">Rating & Reviews</h3>
+// //               <div className="mt-2">
+// //                 <div className="mt-4">
+// //                   <Reviews
+// //                     onAddReview={handleOpenAddReview}
+// //                     reviews={product?.reviews}
+// //                     avgRating={avgRating}
+// //                   />
+// //                 </div>
+// //                 <CustomerReview reviews={product?.reviews} />
+// //               </div>
+// //             </div>
+// //           </div>
+// //         </div>
+
+// //         {/* Similar & Latest */}
+// //         {similarProducts.length > 0 && (
+// //           <div className="mt-8">
+// //             <h2 className="py-2">Similar Products</h2>
+// //             <Card cardData={similarProducts} />
+// //           </div>
+// //         )}
+// //       </section>
+
+// //       <Footer />
+// //     </>
+// //   );
+// // }
+
+// // export default ProductDetails;
+
+// // edit
+// import React, { useState, useMemo, useEffect } from "react";
+// import { useParams, useNavigate } from "react-router";
+// import Navbar from "../components/Navbar";
+// import Breadcrumbs from "../components/Breadcrumbs";
+// import Footer from "../sections/Footer";
+// import Ratings from "../components/Ratings";
+// import Reviews from "../components/Reviews";
+// import CustomerReview from "../components/CustomerReview";
+// import Card from "../components/Card";
+// import { Heart, Minus, PackageOpen, Plus, Trash2 } from "lucide-react";
+
+// import { useDispatch, useSelector } from "react-redux";
+// import {
+//   addToCart,
+//   buyNow,
+//   decreaseQty,
+//   increaseQty,
+// } from "../redux/cart/cartSlice";
+// import { addToWishlist, removeFromWishlist } from "../redux/cart/wishlistSlice";
+// import { getPrices } from "../utils/homePageUtils";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Navigation, Thumbs } from "swiper/modules";
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/thumbs";
+// import EmptyState from "../components/EmptyState";
+// import axiosInstance from "../api/axiosInstance";
+// import AddReviewsModel from "../components/AddReviewsModel";
+
+// function ProductDetails() {
+//   const { uuid } = useParams();
+//   console.log("URL ID from useParams:", uuid);
+//   const navigate = useNavigate();
+//   const dispatch = useDispatch();
+
+//   const [product, setProduct] = useState(null);
+//   const [similarProducts, setSimilarProducts] = useState([]);
+//   const [selectedVariant, setSelectedVariant] = useState(null);
+//   const [selectedColor, setSelectedColor] = useState(null);
+//   const [selectedSize, setSelectedSize] = useState(null);
+//   const [isLoading, setIsLoading] = useState(true);
+//   const [mainImageIndex, setMainImageIndex] = useState(0);
+//   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+//   const [totalCartItems, setTotalCartItems] = useState(0);
+//   const [inWishlist, setInWishlist] = useState(false);
+
+//   const { cartItems } = useSelector((s) => s.cart);
+//   const { wishlistItems } = useSelector((s) => s.wishlist);
+
+//   const [openAddReviewModal, setOpenAddReviewModal] = useState(false);
+//   const [selectedReview, setSelectedReview] = useState(null);
+
+//   const getSimilarProducts = (all, found, uuid) => {
+//     if (!found) return [];
+
+//     const normalize = (str) =>
+//       str
+//         ?.toLowerCase()
+//         .replace(/[^a-z0-9 ]/g, " ")
+//         .trim() || "";
+
+//     const foundTitleWords = normalize(found.title).split(" ");
+
+//     const sameCategoryList = all.filter(
+//       (p) =>
+//         p.uuid !== uuid && normalize(p.category) === normalize(found.category),
+//     );
+
+//     const list = sameCategoryList;
+
+//     const sameSub = list.filter(
+//       (p) => normalize(p.subcategory) === normalize(found.subcategory),
+//     );
+//     if (sameSub.length > 0) return sameSub.slice(0, 10);
+
+//     const similarByTitle = list.filter((p) => {
+//       const title = normalize(p.title);
+//       return foundTitleWords.some((w) => title.includes(w));
+//     });
+
+//     if (similarByTitle.length > 0) return similarByTitle.slice(0, 10);
+
+//     return list.slice(0, 10);
+//   };
+
+//   // FETCH PRODUCT + SIMILAR PRODUCTS
+//   useEffect(() => {
+//     const fetchProduct = async () => {
+//       try {
+//         setIsLoading(true);
+//         const res = await axiosInstance.get("/products/all");
+//         const all = res.data;
+
+//         const found = all.find((p) => p._id === uuid || p.uuid === uuid);
+
+//         setProduct(found || null);
+
+//         if (found?.variants?.length > 0) {
+//           setSelectedVariant(found.variants[0]);
+//         }
+
+//         if (found) {
+//           const similar = getSimilarProducts(
+//             all,
+//             found,
+//             found.uuid || found._id,
+//           );
+//           setSimilarProducts(similar);
+//         }
+//       } catch (err) {
+//         setProduct(null);
+//       } finally {
+//         setIsLoading(false);
+//       }
+//     };
+
+//     if (uuid) fetchProduct();
+//     else setIsLoading(false);
+//   }, [uuid]);
+
+//   const getImageUrl = (img) => {
+//     if (!img) return "/placeholder.png";
+//     if (img.startsWith("http")) return img;
+//     if (img.startsWith("/")) return img;
+//     return `http://localhost:5000${img}`;
+//   };
+
+//   const normalizeSize = (v) =>
+//     `${v?.variantLength}x${v?.variantBreadth} ${v?.variantDimensionunit || ""}`.trim();
+
+//   const findVariant = (color, sizeStr) => {
+//     return (product?.variants || []).find((v) => {
+//       const vColor = v?.variantColor || "";
+//       const vSize = normalizeSize(v);
+//       return (!color || vColor === color) && (!sizeStr || vSize === sizeStr);
+//     });
+//   };
+
+//   // ✅ SINGLE SOURCE OF TRUTH FOR VARIANT ID
+//   const variantId = selectedVariant?.variantId || selectedVariant?._id;
+
+//   const inCart = useMemo(() => {
+//     if (!selectedVariant || !product) return false;
+//     return cartItems.some(
+//       (i) => i.uuid === product.uuid && i.variantId === variantId,
+//     );
+//   }, [cartItems, product?.uuid, selectedVariant, variantId]);
+
+//   const qtyInCart =
+//     cartItems.find((i) => i.uuid === product?.uuid && i.variantId === variantId)
+//       ?.quantity || 0;
+
+//   const colorOptions = [
+//     ...new Set(
+//       (product?.variants || []).map((v) => v?.variantColor).filter(Boolean),
+//     ),
+//   ];
+
+//   const sizeOptions = [
+//     ...new Set(
+//       (product?.variants || [])
+//         .map((v) =>
+//           `${v.variantLength}x${v.variantBreadth} ${v.variantDimensionunit || ""}`.trim(),
+//         )
+//         .filter(Boolean),
+//     ),
+//   ];
+
+//   const onSelectColor = (color) => {
+//     setSelectedColor(color);
+//     const match = findVariant(color, selectedSize) || findVariant(color, null);
+//     if (match) {
+//       setSelectedVariant(match);
+//       setMainImageIndex(0);
+//       thumbsSwiper?.slideTo?.(0);
+//     }
+//   };
+
+//   const onSelectSize = (sizeStr) => {
+//     setSelectedSize(sizeStr);
+//     const match =
+//       findVariant(selectedColor, sizeStr) || findVariant(null, sizeStr);
+//     if (match) {
+//       setSelectedVariant(match);
+//       setMainImageIndex(0);
+//       thumbsSwiper?.slideTo?.(0);
+//     }
+//   };
+
+//   const isDemo = true;
+
+//   const handleOpenAddReview = () => {
+//     setSelectedReview(null);
+//     setOpenAddReviewModal(true);
+//   };
+
+//   const handleCloseReview = () => {
+//     setOpenAddReviewModal(false);
+//     setSelectedReview(null);
+//   };
+
+//   const images = selectedVariant?.variantImage?.length
+//     ? selectedVariant.variantImage
+//     : [];
+
+//   const mrp = Number(selectedVariant?.variantMrp || 0);
+//   const sp = Number(selectedVariant?.variantSellingPrice || 0);
+//   const discount = Number(selectedVariant?.variantDiscount || 0);
+
+//   const effectivePrice =
+//     sp > 0 ? sp : discount > 0 ? Math.round(mrp * (1 - discount / 100)) : mrp;
+
+//   const stock = Number(selectedVariant?.variantAvailableStock || 0);
+//   const outOfStock = stock <= 0;
+
+//   // ✅ IMPORTANT: this useEffect MUST be before any "return"
+//   useEffect(() => {
+//     if (!product?.variants?.length) return;
+
+//     // ✅ don't overwrite if already selected from fetch or user action
+//     if (selectedVariant) return;
+
+//     const v0 = product.variants[0];
+//     setSelectedVariant(v0);
+
+//     setSelectedColor(v0?.variantColor || null);
+//     setSelectedSize(normalizeSize(v0));
+
+//     setMainImageIndex(0);
+//     thumbsSwiper?.slideTo?.(0);
+//   }, [product, thumbsSwiper, selectedVariant]);
+
+//   // IF LOADING
+//   if (isLoading) {
+//     return (
+//       <>
+//         <Navbar />
+//         <EmptyState heading="Loading..." description="Fetching product..." />
+//         <Footer />
+//       </>
+//     );
+//   }
+
+//   if (!product || !selectedVariant) {
+//     return (
+//       <>
+//         <Navbar />
+//         <Breadcrumbs title={"Not Found"} />
+//         <EmptyState
+//           heading="Not Found"
+//           description="The product you’re looking for may have been removed, is out of stock, or the link is broken. Try browsing our categories or return to the home page.."
+//           icon={PackageOpen}
+//           ctaLabel="Go Home"
+//           ctaLink={"/"}
+//         />
+//         <Footer />
+//       </>
+//     );
+//   }
+
+//   const avgRating =
+//     product?.reviews?.length > 0
+//       ? product.reviews.reduce((sum, review) => sum + review.rating, 0) /
+//         product.reviews.length
+//       : 0;
+
+//   const handleBuyNow = (product) => {
+//     dispatch(buyNow(product));
+//     navigate("/checkout/payment");
+//   };
+//   return (
+//     <>
+//       <Navbar />
+//       <Breadcrumbs
+//         category={product.category}
+//         subcategory={product.subcategory}
+//         title={product.title}
+//       />
+//       <section className="lg:px-20 md:px-[60px] px-4 py-6 ">
+//         <AddReviewsModel
+//           open={openAddReviewModal}
+//           review={selectedReview}
+//           product={{
+//             uuid: product?.uuid,
+//             title: product?.title,
+//             selectedVariant,
+//             image: getImageUrl(
+//               selectedVariant?.images?.[0] ||
+//                 product?.images?.[0] ||
+//                 selectedVariant?.variantImage?.[0],
+//             ),
+//           }}
+//           onClose={handleCloseReview}
+//           onSave={(newReviewOrUpdated) => {
+//             setProduct((prev) => ({
+//               ...prev,
+//               reviews: selectedReview
+//                 ? prev.reviews.map((r) =>
+//                     r._id === newReviewOrUpdated._id ? newReviewOrUpdated : r,
+//                   )
+//                 : [newReviewOrUpdated, ...(prev.reviews || [])],
+//             }));
+//             handleCloseReview();
+//           }}
+//         />
+//         <div className="flex lg:flex-row flex-col gap-8 items-start max-lg:items-center">
+//           {/* Thumbnails */}
+//           <div className="lg:sticky top-20 flex md:gap-8 gap-4 max-md:flex-col-reverse max-lg:w-full">
+//             {/* Thumbnails Swiper */}
+//             <div className="flex flex-col max-md:flex-row md:gap-4 max-md:justify-between rounded-lg">
+//               <Swiper
+//                 onSwiper={setThumbsSwiper}
+//                 spaceBetween={10}
+//                 slidesPerView="auto"
+//                 watchSlidesProgress
+//                 direction="vertical"
+//                 breakpoints={{
+//                   0: { direction: "horizontal", slidesPerView: 4 },
+//                   768: { direction: "vertical" },
+//                 }}
+//                 className="!w-full !h-auto md:!h-[460px]"
+//               >
+//                 {images.map((img, idx) => (
+//                   <SwiperSlide key={idx} className="!w-auto !h-auto">
+//                     <div
+//                       className={`relative w-20 h-20 cursor-pointer transform transition duration-300 flex items-center justify-center
+//                           ${
+//                             mainImageIndex === idx
+//                               ? "border-2 border-[#977c2d] shadow-md rounded-md"
+//                               : "border-2 border-transparent hover:border-gray-200 rounded-md"
+//                           }`}
+//                       onClick={() => {
+//                         setMainImageIndex(idx);
+//                         thumbsSwiper?.slideTo?.(idx);
+//                       }}
+//                     >
+//                       <div className="w-full h-full overflow-hidden rounded-md">
+//                         <img
+//                           src={getImageUrl(img)}
+//                           alt={`${product.title} ${idx}`}
+//                           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+//                         />
+//                       </div>
+
+//                       {mainImageIndex === idx && (
+//                         <div className="absolute inset-0 bg-[#D49A06]/10 pointer-events-none transition-opacity duration-300 rounded-md" />
+//                       )}
+//                     </div>
+//                   </SwiperSlide>
+//                 ))}
+//               </Swiper>
+//             </div>
+
+//             {/* Main Image Swiper */}
+//             <div className="relative">
+//               <Swiper
+//                 modules={[Navigation, Thumbs]}
+//                 thumbs={{
+//                   swiper:
+//                     thumbsSwiper && !thumbsSwiper.destroyed
+//                       ? thumbsSwiper
+//                       : null,
+//                 }}
+//                 spaceBetween={10}
+//                 loop={false}
+//                 onSlideChange={(swiper) =>
+//                   setMainImageIndex(swiper.activeIndex)
+//                 }
+//                 initialSlide={mainImageIndex}
+//                 className="xl:min-w-[600px] xl:h-[600px] md:!w-[500px] w-full"
+//               >
+//                 {images.map((img, idx) => (
+//                   <SwiperSlide key={idx}>
+//                     <img
+//                       src={getImageUrl(img)}
+//                       alt={`${product.title} ${idx}`}
+//                       className="w-full h-full object-cover"
+//                     />
+//                   </SwiperSlide>
+//                 ))}
+//               </Swiper>
+
+//               {/* Wishlist Button */}
+//               <button
+//                 className="absolute bg-white shadow-md md:shadow-lg md:bg-white group-hover:block active:scale-110 transition-all ease-in-out duration-300 md:p-2 p-2 rounded-full text-xs top-1 right-1 z-20 cursor-default"
+//                 onClick={(e) => {
+//                   e.stopPropagation();
+
+//                   const isInWishlist = wishlistItems.some(
+//                     (i) => i.uuid === product.uuid && i.variantId === variantId,
+//                   );
+
+//                   if (isInWishlist) {
+//                     dispatch(
+//                       removeFromWishlist({ uuid: product.uuid, variantId }),
+//                     );
+//                   } else {
+//                     dispatch(
+//                       addToWishlist({
+//                         uuid: product.uuid,
+//                         variantId,
+//                         title: product.title,
+//                         basePrice: selectedVariant.price,
+//                         stockQuantity: selectedVariant.stockQuantity,
+//                         discountPercent: product.discountPercent,
+//                         image: product.images,
+//                         deliverBy: product.deliverBy,
+//                         selectedOptions: {
+//                           color: selectedVariant.color,
+//                           type: selectedVariant.type,
+//                           dimension: selectedVariant.dimension,
+//                         },
+//                       }),
+//                     );
+//                   }
+//                 }}
+//               >
+//                 <Heart
+//                   className="w-8 h-8 p-1 cursor-pointer"
+//                   fill={
+//                     wishlistItems.some(
+//                       (i) =>
+//                         i.uuid === product.uuid && i.variantId === variantId,
+//                     )
+//                       ? "red"
+//                       : "white"
+//                   }
+//                   stroke={
+//                     wishlistItems.some(
+//                       (i) =>
+//                         i.uuid === product.uuid && i.variantId === variantId,
+//                     )
+//                       ? "red"
+//                       : "black"
+//                   }
+//                   strokeWidth={1}
+//                 />
+//               </button>
+//             </div>
+//           </div>
+
+//           {/* Details */}
+//           <div className="w-full">
+//             <h1 className="lg:text-4xl md:text-3xl text-2xl font-medium md:font-semibold text-gray-900 py-2 leading-7">
+//               {product.productTittle}
+//             </h1>
+
+//             {(isDemo || product?.reviews?.length > 0) && (
+//               <div className=" border-gray-200 pb-2 flex items-center gap-4">
+//                 <div className="flex items-center gap-1">
+//                   <span className="text-2xl font-semibold text-gray-900">
+//                     {avgRating ?? "—"}
+//                   </span>
+//                   <span className="text-gray-500 text-sm">/5</span>
+//                 </div>
+//                 <div className="flex flex-col gap-1">
+//                   <Ratings size={20} avgRating={avgRating} />
+//                   <span className="text-sm text-gray-500">
+//                     <span>Based on </span>
+//                     {product?.reviews?.length ?? 0}{" "}
+//                     {product?.reviews?.length === 1 ? "review" : "reviews"}
+//                   </span>
+//                 </div>
+//                 <div className="h-6 w-px bg-gray-300"></div>x
+//                 <button
+//                   className="text-sm font-medium text-[#1C3753] hover:text-[#1C3753] transition-colors underline"
+//                   onClick={() =>
+//                     document
+//                       .getElementById("reviews-section")
+//                       ?.scrollIntoView({ behavior: "smooth" })
+//                   }
+//                 >
+//                   See all reviews
+//                 </button>
+//               </div>
+//             )}
+
+//             {/* Product Price & details */}
+//             <div className="py-2 border-b">
+//               <div className="text-neural-700 font-medium">
+//                 <span className="mr-2 text-[28px]">₹{effectivePrice}</span>
+//                 {mrp > effectivePrice ? (
+//                   <span className="line-through text-[#787878] font-normal text-[16px]">
+//                     ₹{mrp}
+//                   </span>
+//                 ) : null}
+//                 {discount > 0 ? (
+//                   <span className="ml-2 text-[#168408] text-sm">
+//                     {Math.round(discount)}% Off
+//                   </span>
+//                 ) : null}
+//               </div>
+//               <span className="text-[#686868] text-xs">
+//                 inclusive of all taxes
+//               </span>
+//             </div>
+
+//             {/* Color Options */}
+//             {colorOptions.length > 0 && (
+//               <div className="mt-2">
+//                 <h3 className="font-medium">
+//                   Color:{" "}
+//                   <span className="text-[#1C1C1C] font-medium">
+//                     {selectedVariant?.variantColor || "-"}
+//                   </span>
+//                 </h3>
+
+//                 <div className="flex gap-2 mt-2 flex-wrap">
+//                   {colorOptions.map((c) => (
+//                     <button
+//                       key={c}
+//                       className={`px-3 py-1 rounded-md border border-[#1C3753] text-sm
+//             ${
+//               selectedVariant?.variantColor === c
+//                 ? "border-2 border-[#1C3753] bg-[#D5E5F5] text-[#1C3753]"
+//                 : "bg-white hover:bg-gray-200"
+//             }`}
+//                       onClick={() => onSelectColor(c)}
+//                     >
+//                       {c}
+//                     </button>
+//                   ))}
+//                 </div>
+//               </div>
+//             )}
+
+//             {/* size Options */}
+//             {sizeOptions.length > 0 && (
+//               <div className="mt-3 border-b pb-3">
+//                 <h3 className="font-medium">
+//                   Size:{" "}
+//                   <span className="text-[#1C1C1C] font-medium">
+//                     {`${selectedVariant?.variantLength}x${selectedVariant?.variantBreadth} ${
+//                       selectedVariant?.variantDimensionunit || ""
+//                     }`}
+//                   </span>
+//                 </h3>
+
+//                 <div className="flex gap-2 mt-2 flex-wrap">
+//                   {sizeOptions.map((s) => (
+//                     <button
+//                       key={s}
+//                       className={`px-3 py-1 rounded-md border border-[#1C3753] text-sm
+//             ${
+//               s === normalizeSize(selectedVariant)
+//                 ? "border-2 border-[#1C3753] bg-[#D5E5F5] text-[#1C1C1C]"
+//                 : "bg-white hover:bg-[#D5E5F5]"
+//             }`}
+//                       onClick={() => onSelectSize(s)}
+//                     >
+//                       {s}
+//                     </button>
+//                   ))}
+//                 </div>
+//               </div>
+//             )}
+
+//             <div className="flex gap-3 py-4 border-b">
+//               {outOfStock ? (
+//                 <button
+//                   disabled
+//                   className="px-6 py-2 bg-gray-300 text-gray-600 rounded-full cursor-not-allowed"
+//                 >
+//                   Out of Stock
+//                 </button>
+//               ) : inCart ? (
+//                 <>
+//                   <div className="flex items-center gap-3 px-4 border-[#1C3753] ring-1 ring-[#1C3753]/50 shadow-md p-1 rounded-md transition-all ease-in ">
+//                     {/* ➖ Decrease */}
+//                     <button
+//                       onClick={(e) => {
+//                         e.stopPropagation();
+//                         dispatch(
+//                           decreaseQty({ uuid: product.uuid, variantId }),
+//                         );
+//                       }}
+//                       className="w-6 h-6 flex items-center justify-center"
+//                       disabled={isLoading}
+//                     >
+//                       {qtyInCart === 1 ? (
+//                         <Trash2 size={16} />
+//                       ) : (
+//                         <Minus size={16} />
+//                       )}
+//                     </button>
+
+//                     {/* Quantity */}
+//                     <span className="w-6 text-center">{qtyInCart}</span>
+
+//                     {/*  Increase */}
+//                     <button
+//                       onClick={(e) => {
+//                         e.stopPropagation();
+//                         dispatch(
+//                           increaseQty({ uuid: product.uuid, variantId }),
+//                         );
+//                       }}
+//                       className="w-6 h-6 flex items-center justify-center"
+//                       disabled={isLoading}
+//                     >
+//                       <Plus size={16} />
+//                     </button>
+//                   </div>
+//                 </>
+//               ) : (
+//                 // add on cart
+//                 <button
+//                   onClick={() => {
+//                     console.log("ADDING TO CART:", {
+//                       uuid: product.uuid,
+//                       variantId,
+//                       selectedVariant,
+//                     });
+
+//                     const { base, effective, discountPercent } =
+//                       getPrices(product);
+
+//                     setIsLoading(true);
+//                     setTimeout(() => {
+//                       dispatch(
+//                         addToCart({
+//                           uuid: product.uuid,
+//                           variantId,
+//                           title: product.title,
+
+//                           basePrice: base,
+//                           effectivePrice: effective,
+//                           discountPercent,
+
+//                           stockQuantity:
+//                             selectedVariant.variantQuantity ?? 999999,
+
+//                           image:
+//                             selectedVariant.variantImage?.[0] ||
+//                             "/placeholder.png",
+
+//                           deliverBy: product.deliverBy,
+
+//                           selectedOptions: {
+//                             color: selectedVariant.color,
+//                             type: selectedVariant.variantType,
+//                             dimension: selectedVariant.variantValue,
+//                           },
+//                         }),
+//                       );
+
+//                       setIsLoading(false);
+//                     }, 200);
+//                   }}
+//                   disabled={isLoading}
+//                   className="px-6 py-2 bg-white hover:bg-[#1C3753] hover:text-white 
+// transform transition-all duration-200 ease-in-out 
+// hover:scale-105 text-black border border-[#1C3753] rounded-md"
+//                 >
+//                   {isLoading ? "Adding..." : "Add to Cart"}
+//                 </button>
+//               )}
+
+//               {/* 🛒 Buy Now */}
+//               <button
+//                 className="px-6 py-2 bg-[#1C3753] text-white hover:bg-[#1C3753] hover:text-white 
+// transform transition-all duration-200 ease-in-out 
+// hover:scale-105 border border-[#1C3753] rounded-md"
+//                 onClick={() => handleBuyNow(product, selectedVariant)}
+//                 disabled={outOfStock || isLoading}
+//               >
+//                 Buy now
+//               </button>
+//             </div>
+
+//             {/* Specifications */}
+//             <div className="py-4 border-b">
+//               <h3 className="font-medium">Product Specifications</h3>
+//               <div className="text-[14px] mt-2">
+//                 <p className="text-[14px] text-[#6C6B6B] mt-2">
+//                   Product Size: -{" "}
+//                   <span className="text-[#171515]">
+//                     {normalizeSize(selectedVariant) || "-"}
+//                   </span>
+//                 </p>
+//                 <p className="text-[14px] text-[#6C6B6B]">
+//                   Item Weight -{" "}
+//                   <span className="text-[#171515] capitalize">
+//                     {selectedVariant?.variantWidth || "-"}
+//                     {selectedVariant?.variantWidthUnit || "-"}
+//                   </span>
+//                 </p>
+
+//                 <p className="text-[14px] text-[#6C6B6B]">
+//                   Color:{" "}
+//                   <span className="text-[#171515] capitalize">
+//                     {selectedVariant?.variantColor || "-"}
+//                   </span>
+//                 </p>
+//                 <p className="capitalize">
+//                   <span className="text-[#6C6B6B]">Material</span> -{" "}
+//                   {product.materialType}
+//                 </p>
+//                 <p className="capitalize">
+//                   <span className="text-[#6C6B6B]">Category:</span> -{" "}
+//                   {product.category || "-"}
+//                 </p>
+//                 <p className="capitalize">
+//                   <span className="text-[#6C6B6B]">Sub-Category:</span> -{" "}
+//                   {product.subcategory || "-"}
+//                 </p>
+//                 <p className="capitalize">
+//                   <span className="text-[#6C6B6B]">Return Policy</span> -{" "}
+//                   {product && true ? "Easy 7 days return available" : "-"}
+//                 </p>
+//                 <p
+//                   className={`font-medium ${
+//                     stock > 0 ? "text-green-600" : "text-red-600"
+//                   }`}
+//                 >
+//                   <span className="text-[#6C6B6B]">Stock - </span>
+//                   {stock > 0 ? `${stock} available` : "Out of Stock"}
+//                 </p>
+//               </div>
+//             </div>
+
+//             {/* About */}
+//             <div className="py-4">
+//               <h3 className="font-medium">Product Description</h3>
+
+//               {product.bulletPoints && product.bulletPoints.length > 0 ? (
+//                 <ul className="list-disc list-inside text-[#6C6B6B] mt-2 space-y-1">
+//                   {product.bulletPoints.map((point, idx) => (
+//                     <li key={idx}>{point}</li>
+//                   ))}
+//                 </ul>
+//               ) : (
+//                 <p className="text-[#6C6B6B] mt-2">{product.description}</p>
+//               )}
+//             </div>
+
+//             {/* Reviews */}
+//             <div className="py-4" id="reviews-section">
+//               <h3 className="text-lg">Rating & Reviews</h3>
+//               <div className="mt-2">
+//                 <div className="mt-4">
+//                   <Reviews
+//                     onAddReview={handleOpenAddReview}
+//                     reviews={product?.reviews}
+//                     avgRating={avgRating}
+//                   />
+//                 </div>
+//                 <CustomerReview reviews={product?.reviews} />
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Similar & Latest */}
+//         {similarProducts.length > 0 && (
+//           <div className="mt-8">
+//             <h2 className="py-2">Similar Products</h2>
+//             <Card cardData={similarProducts} />
+//           </div>
+//         )}
+//       </section>
+
+//       <Footer />
+//     </>
+//   );
+// }
+
+// export default ProductDetails;
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { Heart, Minus, Plus, Trash2, PackageOpen } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Thumbs } from "swiper/modules";
+
+// Components
+import Navbar from "../components/Navbar";
+import Breadcrumbs from "../components/Breadcrumbs";
+import Footer from "../sections/Footer";
+import Ratings from "../components/Ratings";
+import Reviews from "../components/Reviews";
+import Card from "../components/Card";
+import EmptyState from "../components/EmptyState";
+
+// Redux & Data
+import { addToCart, buyNow, decreaseQty, increaseQty } from "../redux/cart/cartSlice";
+import { addToWishlist, removeFromWishlist } from "../redux/cart/wishlistSlice";
+import products from "../data/products.json";
+import { dummyCollections } from "../data/dummyCollections"; 
+
+// Styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+
+function ProductDetails() {
+  const { uuid } = useParams();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const [product, setProduct] = useState(null);
+  const [similarProducts, setSimilarProducts] = useState([]);
+  const [selectedVariant, setSelectedVariant] = useState(null);
+  const [mainImageIndex, setMainImageIndex] = useState(0);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
+  const { cartItems } = useSelector((s) => s.cart);
+  const { wishlistItems } = useSelector((s) => s.wishlist);
+
+  useEffect(() => {
+    // 1. Dono datasets ko merge kiya
+    const allItems = [...products, ...dummyCollections];
+    
+    // 2. Product dhoondo (uuid ya _id)
+    const found = allItems.find((p) => String(p.uuid) === String(uuid) || String(p._id) === String(uuid));
+    
+    if (found) {
+      // 3. Normalization Logic: Keys mismatch fix
+      const mappedProduct = {
+        ...found,
+        uuid: found.uuid || found._id,
+        title: found.title || found.productTittle,
+        description: found.description || "Premium quality product from our collection.",
+        category: found.category || "General",
+        reviews: found.reviews || []
+      };
+
+      setProduct(mappedProduct);
+
+      // Default variant selection logic
+      const firstVariant = found.variants?.[0] || null;
+      setSelectedVariant(firstVariant);
+
+      // 4. Similar products filter fix
+      const similar = allItems.filter(p => {
+        const pId = p.uuid || p._id;
+        const currentId = found.uuid || found._id;
+        return p.category === mappedProduct.category && String(pId) !== String(currentId);
+      }).slice(0, 10);
+      
+      setSimilarProducts(similar);
+    }
+    window.scrollTo(0, 0);
+  }, [uuid]);
+
+  if (!product) return <><Navbar /><EmptyState heading="Not Found" icon={PackageOpen} ctaLink="/" /><Footer /></>;
+
+  const variantId = selectedVariant?.variantId || "default";
+  const qtyInCart = cartItems.find((i) => i.uuid === product.uuid && i.variantId === variantId)?.quantity || 0;
+
+  // Image Fallback Logic: Check both sources
+  const productImages = selectedVariant?.variantImage || product.images || [];
+
+  // Price Logic Fix
+  const mrp = Number(selectedVariant?.variantMrp || product.mrp || 0);
+  const sp = Number(selectedVariant?.variantSellingPrice || product.sellingPrice || 0);
+
+  return (
+    <div className="bg-white">
+      <Navbar />
+      <Breadcrumbs category={product.category} title={product.title} />
+      
+      <section className="lg:px-20 md:px-[60px] px-4 py-6">
+        <div className="flex lg:flex-row flex-col gap-8 items-start max-lg:items-center">
+          
+          <div className="lg:sticky top-20 flex md:gap-8 gap-4 max-md:flex-col-reverse max-lg:w-full">
+            <div className="flex flex-col max-md:flex-row md:gap-4">
+              <Swiper
+                onSwiper={setThumbsSwiper}
+                spaceBetween={10}
+                slidesPerView="auto"
+                direction="vertical"
+                breakpoints={{
+                  0: { direction: "horizontal", slidesPerView: 4 },
+                  768: { direction: "vertical" },
+                }}
+                className="!w-full !h-auto md:!h-[460px]"
+              >
+                {productImages.map((img, idx) => (
+                  <SwiperSlide key={idx} className="!w-auto !h-auto">
+                    <div
+                      className={`relative w-20 h-20 cursor-pointer rounded-md border-2 transition-all ${
+                        mainImageIndex === idx ? "border-[#977c2d] shadow-md" : "border-transparent"
+                      }`}
+                      onClick={() => { setMainImageIndex(idx); thumbsSwiper?.slideTo(idx); }}
+                    >
+                      <img src={img} className="w-full h-full object-cover rounded-md" alt="thumb" />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+
+            <div className="relative">
+              <Swiper
+                modules={[Navigation, Thumbs]}
+                thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+                onSlideChange={(swiper) => setMainImageIndex(swiper.activeIndex)}
+                className="xl:min-w-[600px] xl:h-[600px] md:!w-[500px] w-full border rounded-lg"
+              >
+                {productImages.map((img, idx) => (
+                  <SwiperSlide key={idx}>
+                    <img src={img} className="w-full h-full object-contain" alt="main-product" />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </div>
+
+          <div className="w-full space-y-4">
+            <h1 className="text-3xl font-bold text-gray-900">{product.title}</h1>
+            
+            <div className="flex items-center gap-4 py-2 border-b">
+              <div className="text-2xl font-bold text-gray-900">₹{sp}</div>
+              {mrp > sp && <span className="line-through text-gray-400">₹{mrp}</span>}
+            </div>
+
+            <div className="flex gap-3 py-4 border-b">
+              {qtyInCart > 0 ? (
+                <div className="flex items-center gap-3 px-4 border-[#1C3753] ring-1 ring-[#1C3753]/50 shadow-md p-2 rounded-md">
+                  <button onClick={() => dispatch(decreaseQty({ uuid: product.uuid, variantId }))}>
+                    {qtyInCart === 1 ? <Trash2 size={18} /> : <Minus size={18} />}
+                  </button>
+                  <span className="w-8 text-center font-bold">{qtyInCart}</span>
+                  <button onClick={() => dispatch(increaseQty({ uuid: product.uuid, variantId }))}><Plus size={18} /></button>
+                </div>
+              ) : (
+                <button
+                  onClick={() => dispatch(addToCart({
+                    uuid: product.uuid,
+                    variantId,
+                    title: product.title,
+                    sellingPrice: sp,
+                    mrp: mrp,
+                    category: product.category,
+                    discountPercent: mrp > sp ? Math.round(((mrp - sp) / mrp) * 100) : 0,
+                    image: productImages[0],
+                    stockQuantity: selectedVariant?.variantQuantity ?? 50
+                  }))}
+                  className="px-6 py-3 rounded-md font-semibold border-2 border-[#1C3753] text-[#1C3753] hover:bg-[#1C3753] hover:text-white transition-all hover:scale-105"
+                >
+                  ADD TO CART
+                </button>
+              )}
+
+              <button
+                onClick={() => {
+                  dispatch(buyNow({
+                    uuid: product.uuid || product._id,
+                    variantId: variantId,
+                    title: product.title || product.productTittle,
+                    category: product.category,
+                    sellingPrice: sp,
+                    mrp: mrp,
+                    discountPercent: mrp > sp ? Math.round(((mrp - sp) / mrp) * 100) : 0,
+                    image: productImages[0] || "/placeholder.png",
+                    quantity: 1,
+                    stockQuantity: selectedVariant?.variantQuantity || 50
+                  }));
+                  navigate("/checkout/payment");
+                }}
+                className="px-8 py-3 bg-[#1C3753] text-white rounded-md font-semibold hover:scale-105 transition-all"
+              >
+                BUY NOW
+              </button>
+            </div>
+
+            <div className="py-4">
+              <h3 className="font-medium text-lg">Description</h3>
+              <p className="text-gray-600 mt-2 text-sm">{product.description}</p>
+            </div>
+
+            <Reviews reviews={product.reviews} />
+          </div>
+        </div>
+
+        {similarProducts.length > 0 && (
+          <div className="mt-20 border-t pt-10">
+            <h2 className="text-2xl font-bold mb-6">You May Also Like</h2>
+            {/* Card component ko normalized data mil raha hai */}
+            <Card cardData={similarProducts} />
+          </div>
+        )}
+      </section>
+      <Footer />
+    </div>
+  );
+}
+
+export default ProductDetails;

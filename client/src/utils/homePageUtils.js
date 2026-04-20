@@ -1,0 +1,114 @@
+// ---------------------------
+// PRODUCT URL
+// ---------------------------
+export const getProductUrl = (p) =>
+  p?.route ||
+  (p?.uuid ? `/product/${encodeURIComponent(p.uuid)}` :
+   p?._id ? `/product/${encodeURIComponent(p._id)}` :
+   p?.SKU ? `/product/${encodeURIComponent(p.SKU)}` :
+   "/");
+
+// ---------------------------
+// PRODUCT CARD IMAGE
+// ---------------------------
+export const getCardImage = (p) => {
+  // 1. New structure → main product gallery
+  if (p?.media?.gallery?.length) return p.media.gallery[0]?.src;
+
+  // 2. New structure → variants with "variantImage"
+  if (p?.variants?.length) {
+    for (const v of p.variants) {
+      if (v?.variantImage?.length) return v.variantImage[0];
+    }
+  }
+
+  // 3. Legacy structure → variants with "images"
+  if (p?.variants?.length && p.variants[0]?.images?.length)
+    return p.variants[0].images[0];
+
+  // 4. Base product images (legacy)
+  if (p?.images?.length) return p.images[0];
+
+  // 5. Old fallback
+  if (p?.image?.length) return p.image[0];
+
+  // 6. Final fallback — IMPORTANT FIX
+  return "/placeholder.jpg"; // ALWAYS return string
+};
+
+// ---------------------------
+// PRODUCT PRICE CALCULATOR
+// ---------------------------
+// export const getPrices = (p) => {
+//   const base = p?.pricing?.mrp ?? p?.sellingPrice ?? 0;
+
+//   const discountActive = p?.pricing?.discount?.active ?? p?.discountPercent > 0;
+
+//   const pct = discountActive
+//     ? p?.pricing?.discount?.percent ?? p?.discountPercent ?? 0
+//     : 0;
+
+//   const effective = pct > 0 ? Math.round(base * (1 - pct / 100)) : base;
+
+//   const currency = p?.pricing?.currency || "INR";
+//   const symbol = currency === "INR" ? "₹" : "";
+
+//   return { base, effective, discountPercent: pct, symbol };
+// };
+
+export const getPrices = (p) => {
+  if (!p) return { base: 0, effective: 0, discountPercent: 0, symbol: "₹" };
+
+  const firstVariant = p?.variants?.[0];
+
+  // 1. Prioritize top-level prices if they exist (standard for products.json)
+  const productMrp = Number(p.mrp || 0);
+  const productSelling = Number(p.sellingPrice || 0);
+
+  // 2. Variant-based pricing fallback
+  const variantMrp = Number(firstVariant?.variantMrp || firstVariant?.price || 0);
+  const variantSelling = Number(firstVariant?.variantSellingPrice || firstVariant?.price || 0);
+  const variantDiscount = Number(firstVariant?.variantDiscount || 0);
+
+  // Effective and Base prices extraction
+  let base = productMrp || variantMrp || productSelling || variantSelling || 0;
+  let effective = productSelling || variantSelling || base;
+
+  // If we only have base but no selling, and there is a discount%
+  const pct = Number(p.discountPercent || variantDiscount || 0);
+  if (effective === base && pct > 0) {
+    effective = Math.round(base * (1 - pct / 100));
+  }
+
+  // Calculate discount if missing
+  const finalDiscount = pct || (base > effective ? Math.round(((base - effective) / base) * 100) : 0);
+
+  return {
+    base,
+    effective,
+    discountPercent: finalDiscount,
+    symbol: "₹",
+  };
+};
+
+// ---------------------------
+// FORMAT PRICE
+// ---------------------------
+export const formatPrice = (price) => {
+  const num = Number(price);
+
+  if (isNaN(num)) return "₹0";
+
+  return `₹${num.toLocaleString("en-IN", {
+    minimumFractionDigits: Number.isInteger(num) ? 0 : 2,
+    maximumFractionDigits: 2,
+  })}`;
+};
+
+
+export const getAverageRating = (reviews = []) => {
+  if (!Array.isArray(reviews) || reviews.length === 0) return 0;
+
+  const total = reviews.reduce((sum, r) => sum + Number(r.rating || 0), 0);
+  return total / reviews.length;
+};

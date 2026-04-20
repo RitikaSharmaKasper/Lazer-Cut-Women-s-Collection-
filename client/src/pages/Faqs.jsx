@@ -1,0 +1,156 @@
+import React from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import Navbar from "../components/Navbar";
+import Footer from "../sections/Footer";
+import { Link } from "react-router";
+import faqsImage from "../assets/Faqs.png";
+
+const faqs = [
+  {
+    question: "1. What fabrics are your clothes made of?",
+    answer:
+      "Our apparel is crafted from high-quality, breathable fabrics including pure cotton, silk, and premium blends designed for comfort and longevity.",
+  },
+  {
+    question: "2. Can I request custom sizing?",
+    answer:
+      "Yes! We offer basic alterations and custom sizing on select premium items. You can reach out to our support team for a sizing consultation.",
+  },
+  {
+    question: "3. How do I know my correct size?",
+    answer:
+      "Every product has a detailed size guide provided in the description. We recommend measuring yourself and comparing it to our chart before ordering.",
+  },
+  {
+    question: "4. Are the colors exactly as shown in the pictures?",
+    answer:
+      "We strive for accuracy, but due to lighting and screen differences, the actual fabric color may vary slightly from the images.",
+  },
+  {
+    question: "5. Do you offer cash on delivery (COD)?",
+    answer:
+      "Yes, we provide COD in most pin codes across India. You’ll see the option at checkout.",
+  },
+  {
+    question: "6. How long will it take to receive my order?",
+    answer:
+      "Orders are usually shipped within 2–4 business days. Delivery time depends on your location but typically ranges from 5–8 working days.",
+  },
+  {
+    question: "7. How do I care for my clothing?",
+    answer:
+      "Care instructions are provided on the label of each garment. Generally, we recommend gentle washes and avoiding harsh chemicals.",
+  },
+  {
+    question: "8. What if I receive a damaged product?",
+    answer:
+      "No worries! Just contact us within 48 hours of delivery with photos, and we’ll replace it or issue a refund.",
+  },
+  {
+    question: "9. Can I return or exchange my order?",
+    answer:
+      "Yes, we accept returns for damaged or incorrect items. Custom orders, however, are not returnable unless there’s a quality issue.",
+  },
+  {
+    question: "10. Do you ship internationally?",
+    answer:
+      "Currently, we ship only within India. But international delivery is coming soon — stay tuned!",
+  },
+];
+
+function Faqs() {
+  return (
+    <>
+      <Navbar />
+      <Link
+        className="lg:px-20 md:px-[60px] px-4 flex gap-2 items-center py-[30px] border-t border-t-[#EBEBEB]"
+        to={"/"}
+      >
+        <ArrowLeft size={18} strokeWidth={1} />
+        <p className="text-[#565656]">FAQS</p>
+      </Link>
+
+      <section className="lg:px-20 md:px-[60px] px-4 flex flex-col  gap-8 py-[23px]">
+        {/* FAQ Content */}
+        <div className=" w-full mx-auto">
+          <h1 className="text-3xl md:text-4xl font-[400] mb-6">
+            Frequently Asked Questions (FAQs)
+          </h1>
+          <div className="flex flex-col gap-6">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="flex flex-col gap-2">
+                <h2 className="text-[18px] md:text-[20px] text-black font-[400]">
+                  {faq.question}
+                </h2>
+                <p className="text-[15px] md:text-[17px] text-[#515151]">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Contact + Newsletter */}
+        <div>
+          {/* Still Have Questions */}
+          <div className="h-auto bg-[#D5E5F5] flex flex-col items-center py-6 px-4 gap-2 rounded-md">
+            <h1 className="text-lg sm:text-xl text-gray-800 md:text-[20px] font-medium">
+             Do you still have any questions?
+            </h1>
+            <p className="text-[#1C1C1C] text-center text-sm md:text-base max-w-lg">
+              Can’t find the answer you’re looking for? Please chat to our
+              friendly team.
+            </p>
+            <button className="py-2 px-6 flex items-center gap-2 bg-[#1C3753] text-white  rounded-md mt-4">
+              Contact Us  <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Newsletter Section */}
+          {/* <div className="flex flex-col lg:flex-row justify-between items-center gap-8 my-10">
+            <div className="flex flex-col justify-center items-center text-center lg:text-left flex-1">
+              <h1 className="text-lg sm:text-xl text-gray-800 font-medium">
+                Sign up for our Newsletter
+              </h1>
+              <p className="text-[14px] text-[#828282]">
+                Stay updated on new arrivals, exclusive deals, and product
+                releases.
+              </p>
+
+              <div>
+                <div className="flex flex-col sm:flex-row gap-2 mt-6">
+                  <input
+                    type="text"
+                    className="outline-none border border-[#EBB100] placeholder-[#EBB100] py-2 px-4 rounded-md w-full sm:w-auto"
+                    placeholder="Enter Your Gmail"
+                  />
+                  <button className="px-6 py-2 bg-[#EBB100] rounded-md w-full sm:w-auto">
+                    Subscribe
+                  </button>
+                </div>
+                <p className="text-[12px] md:text-[14px] text-[#828282] mt-2">
+                  We care about your data in our{" "}
+                  <span className="text-[#EBB100] underline">
+                    Privacy policy
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-[#FFC10733] flex-1 flex justify-center rounded-md">
+              <img
+                className="h-[220px] md:h-[355px] w-auto object-contain"
+                src={faqsImage}
+                alt="FAQs"
+              />
+            </div>
+          </div> */}
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  );
+}
+
+export default Faqs;

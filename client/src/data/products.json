@@ -1,0 +1,2546 @@
+[
+  {
+    "uuid": "aur-win-001",
+    "route": "/product/aur-win-001",
+    "title": "Cashmere Blend Cable Knit Sweater",
+    "description": "Luxuriously soft cashmere blend sweater with a classic cable knit pattern.",
+    "type": "Regular Fit",
+    "category": "Winterwear",
+    "subcategory": ["Sweater"],
+    "tags": ["Premium", "Winter", "Classic"],
+    "images": ["https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&q=80&w=800"],
+    "SKU": "AUR-WIN-001",
+    "materialType": "Cashmere Blend",
+    "weight": "0.5kg",
+    "variantQuantity": 30,
+    "hasVariants": true,
+    "mrp": 4999,
+    "sellingPrice": 3499,
+    "status": "Active",
+    "costPrice": 1200,
+    "profit": 2299,
+    "discountPercent": 30,
+    "discountAmount": 1500,
+    "variants": [
+      {
+        "variantId": "aur-win-001-v1",
+        "variantValue": "Oatmeal",
+        "variantName": "Color",
+        "variantQuantity": 30,
+        "variantImage": ["https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&q=80&w=800"]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-win-002",
+    "route": "/product/aur-win-002",
+    "title": "Premium Fleece Oversized Hoodie",
+    "description": "Ultra-cozy heavy fleece hoodie perfect for layering during chilly days.",
+    "type": "Oversized",
+    "category": "Winterwear",
+    "subcategory": ["Hoodie"],
+    "tags": ["Casual", "Essential", "Winter"],
+    "images": ["https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&q=80&w=800"],
+    "SKU": "AUR-WIN-002",
+    "materialType": "Heavy Fleece",
+    "weight": "0.8kg",
+    "variantQuantity": 45,
+    "hasVariants": true,
+    "mrp": 2999,
+    "sellingPrice": 1999,
+    "status": "Active",
+    "costPrice": 600,
+    "profit": 1399,
+    "discountPercent": 33,
+    "discountAmount": 1000,
+    "variants": [
+      {
+        "variantId": "aur-win-002-v1",
+        "variantValue": "Slate Grey",
+        "variantName": "Color",
+        "variantQuantity": 45,
+        "variantImage": ["https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&q=80&w=800"]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-win-003",
+    "route": "/product/aur-win-003",
+    "title": "Faux Fur Trimmed Puffer Jacket",
+    "description": "Stylish and functional puffer jacket with a removable faux fur hood trim.",
+    "type": "Regular Fit",
+    "category": "Winterwear",
+    "subcategory": ["Jacket"],
+    "tags": ["Functional", "Winter", "Outdoor"],
+    "images": ["https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&q=80&w=800"],
+    "SKU": "AUR-WIN-003",
+    "materialType": "Nylon",
+    "weight": "1.2kg",
+    "variantQuantity": 20,
+    "hasVariants": true,
+    "mrp": 6999,
+    "sellingPrice": 4899,
+    "status": "Active",
+    "costPrice": 2000,
+    "profit": 2899,
+    "discountPercent": 30,
+    "discountAmount": 2100,
+    "variants": [
+      {
+        "variantId": "aur-win-003-v1",
+        "variantValue": "Midnight Black",
+        "variantName": "Color",
+        "variantQuantity": 20,
+        "variantImage": ["https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&q=80&w=800"]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-win-004",
+    "route": "/product/aur-win-004",
+    "title": "Classic Wool Blend Trench Coat",
+    "description": "Sophisticated long trench coat made from a premium wool blend.",
+    "type": "Tailored Fit",
+    "category": "Winterwear",
+    "subcategory": ["Coat"],
+    "tags": ["Formal", "Premium", "Winter"],
+    "images": ["https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=1200&q=80"],
+    "SKU": "AUR-WIN-004",
+    "materialType": "Wool Blend",
+    "weight": "1.5kg",
+    "variantQuantity": 15,
+    "hasVariants": true,
+    "mrp": 8999,
+    "sellingPrice": 6299,
+    "status": "Active",
+    "costPrice": 3000,
+    "profit": 3299,
+    "discountPercent": 30,
+    "discountAmount": 2700,
+    "variants": [
+      {
+        "variantId": "aur-win-004-v1",
+        "variantValue": "Camel",
+        "variantName": "Color",
+        "variantQuantity": 15,
+        "variantImage": ["https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=1200&q=80"]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-eth-001",
+    "route": "/product/aur-eth-001",
+    "title": "Handcrafted Silk Heritage Saree",
+    "description": "Exquisite hand-woven silk saree with traditional motifs and premium finishing.",
+    "type": "Traditional",
+    "category": "Traditional",
+    "subcategory": ["Saree"],
+    "tags": ["Luxury", "Traditional", "Wedding"],
+    "images": ["https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=800"],
+    "SKU": "AUR-ETH-001",
+    "mrp": 12999,
+    "sellingPrice": 8499,
+    "status": "Active",
+    "variants": [
+      {
+        "variantId": "aur-eth-001-v1",
+        "variantValue": "Standard",
+        "variantName": "Size",
+        "variantQuantity": 10,
+        "variantImage": ["https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=800"]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-sh-001",
+    "route": "/product/aur-sh-001",
+    "title": "Linen Blend Summer Breeze Shirt",
+    "description": "Lightweight and breathable linen blend shirt, perfect for warm days.",
+    "type": "Regular Fit",
+    "category": "Tops",
+    "subcategory": ["Shirt"],
+    "tags": ["Casual", "Linen", "Summer"],
+    "images": ["https://images.unsplash.com/photo-1551163943-3f6a855d1153?w=800&q=80"],
+    "SKU": "AUR-SH-001",
+    "mrp": 2499,
+    "sellingPrice": 1499,
+    "status": "Active",
+    "variants": [
+      {
+        "variantId": "aur-sh-001-v1",
+        "variantValue": "Standard",
+        "variantName": "Size",
+        "variantQuantity": 20,
+        "variantImage": ["https://images.unsplash.com/photo-1551163943-3f6a855d1153?w=800&q=80"]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-jn-001",
+    "route": "/product/aur-jn-001",
+    "title": "High-Rise Wide Leg Denim",
+    "description": "On-trend wide leg jeans with a flattering high-rise waist and vintage wash.",
+    "type": "Wide Leg",
+    "category": "Jeans & Pants",
+    "subcategory": ["Wide Leg"],
+    "tags": ["Denim", "Trendy", "Casual"],
+    "images": ["https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=80"],
+    "SKU": "AUR-JN-001",
+    "mrp": 3999,
+    "sellingPrice": 2599,
+    "status": "Active",
+    "variants": [
+      {
+        "variantId": "aur-jn-001-v1",
+        "variantValue": "Standard",
+        "variantName": "Size",
+        "variantQuantity": 15,
+        "variantImage": ["https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=80"]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-top-001",
+    "route": "/product/aur-top-001",
+    "title": "Satin Silk Wrap Blouse",
+    "description": "Elegant satin wrap blouse with a subtle sheen, perfect for evening wear.",
+    "type": "Slim Fit",
+    "category": "Tops",
+    "subcategory": ["Blouse"],
+    "tags": ["Elegant", "Satin", "Evening"],
+    "images": ["https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=800&q=80"],
+    "SKU": "AUR-TOP-001",
+    "mrp": 2999,
+    "sellingPrice": 1899,
+    "status": "Active",
+    "variants": [
+      {
+        "variantId": "aur-top-001-v1",
+        "variantValue": "Standard",
+        "variantName": "Size",
+        "variantQuantity": 25,
+        "variantImage": ["https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=800&q=80"]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-su-001",
+    "route": "/product/aur-su-001",
+    "title": "Embroidered Anarkali Kurta Set",
+    "description": "Stunning Anarkali set with intricate embroidery and matching dupatta.",
+    "type": "Formal",
+    "category": "Ethnic Wear",
+    "subcategory": ["Kurta"],
+    "tags": ["Festive", "Ethnic", "Premium"],
+    "images": ["https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=800&q=80"],
+    "SKU": "AUR-SU-001",
+    "mrp": 7999,
+    "sellingPrice": 5299,
+    "status": "Active",
+    "variants": [
+      {
+        "variantId": "aur-su-001-v1",
+        "variantValue": "Standard",
+        "variantName": "Size",
+        "variantQuantity": 12,
+        "variantImage": ["https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=800&q=80"]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-sar-002",
+    "route": "/product/aur-sar-002",
+    "title": "Kanjivaram Silk Drape",
+    "description": "Timeless Kanjivaram silk saree with traditional borders.",
+    "type": "Traditional",
+    "category": "Ethnic Wear",
+    "subcategory": ["Saree"],
+    "tags": ["Premium", "Silk", "Traditional"],
+    "images": ["https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1200&q=80"],
+    "SKU": "AUR-SAR-002",
+    "mrp": 15999,
+    "sellingPrice": 9999,
+    "status": "Active",
+    "variants": [
+      {
+        "variantId": "aur-sar-002-v1",
+        "variantValue": "Standard",
+        "variantName": "Size",
+        "variantQuantity": 8,
+        "variantImage": ["https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1200&q=80"]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-sh-002",
+    "route": "/product/aur-sh-002",
+    "title": "Formal Slim-Fit Poplin Shirt",
+    "description": "Crisp white poplin shirt for a polished professional look.",
+    "type": "Slim Fit",
+    "category": "Tops",
+    "subcategory": ["Shirt"],
+    "tags": ["Formal", "Office Wear", "Classic"],
+    "images": ["https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=800"],
+    "SKU": "AUR-SH-002",
+    "mrp": 2999,
+    "sellingPrice": 1999,
+    "status": "Active",
+    "variants": [
+      {
+        "variantId": "aur-sh-002-v1",
+        "variantValue": "Standard",
+        "variantName": "Size",
+        "variantQuantity": 30,
+        "variantImage": ["https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=800"]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-jn-003",
+    "route": "/product/aur-jn-003",
+    "title": "Low-Rise Baggy Cargo Jeans",
+    "description": "Casual baggy jeans with functional cargo pockets and a relaxed fit.",
+    "type": "Baggy",
+    "category": "Jeans & Pants",
+    "subcategory": ["Baggy Jeans"],
+    "tags": ["Casual", "Y2K", "Streetwear"],
+    "images": ["https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=1200&q=80"],
+    "SKU": "AUR-JN-003",
+    "mrp": 3499,
+    "sellingPrice": 2299,
+    "status": "Active",
+    "variants": [
+      {
+        "variantId": "aur-jn-003-v1",
+        "variantValue": "Standard",
+        "variantName": "Size",
+        "variantQuantity": 20,
+        "variantImage": ["https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=1200&q=80"]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-set-001",
+    "route": "/product/aur-set-001",
+    "title": "Georgette Floral Printed Suit",
+    "description": "Vibrant georgette suit with delicate floral prints and matching palazzos.",
+    "type": "Floral",
+    "category": "Ethnic Wear",
+    "subcategory": ["Salwar Suit"],
+    "tags": ["Summer", "Ethnic", "Casual"],
+    "images": ["https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=800"],
+    "SKU": "AUR-SET-001",
+    "mrp": 4599,
+    "sellingPrice": 2999,
+    "status": "Active",
+    "variants": [
+      {
+        "variantId": "aur-set-001-v1",
+        "variantValue": "Standard",
+        "variantName": "Size",
+        "variantQuantity": 15,
+        "variantImage": ["https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=800"]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-tsh-006",
+    "route": "/product/aur-tsh-006",
+    "title": "Oversized Graphic Street T-Shirt",
+    "description": "Premium heavy cotton t-shirt featuring modern street-art graphics.",
+    "type": "Oversized",
+    "category": "Tops",
+    "subcategory": [
+      "T-shirts"
+    ],
+    "tags": [
+      "Gen-Z",
+      "Streetwear"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-TSH-006",
+    "materialType": "Heavy Cotton",
+    "weight": "0.3kg",
+    "variantQuantity": 50,
+    "hasVariants": true,
+    "mrp": 1499,
+    "sellingPrice": 899,
+    "status": "Active",
+    "costPrice": 300,
+    "profit": 599,
+    "discountPercent": 40,
+    "discountAmount": 600,
+    "variants": [
+      {
+        "variantId": "aur-tsh-006-v1",
+        "variantValue": "White",
+        "variantName": "Color",
+        "variantQuantity": 50,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-crp-008",
+    "route": "/product/aur-crp-008",
+    "title": "Lace-Trimmed Satin Crop Top",
+    "description": "Delicate satin crop top with lace detailing, perfect for date nights.",
+    "type": "Slim Fit",
+    "category": "Tops",
+    "subcategory": [
+      "Crop Tops"
+    ],
+    "tags": [
+      "Party Wear",
+      "New Arrival"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1554568218-0f1715e72254?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-CRP-008",
+    "materialType": "Satin",
+    "weight": "0.2kg",
+    "variantQuantity": 15,
+    "hasVariants": true,
+    "mrp": 1999,
+    "sellingPrice": 1299,
+    "status": "Active",
+    "costPrice": 500,
+    "profit": 799,
+    "discountPercent": 35,
+    "discountAmount": 700,
+    "variants": [
+      {
+        "variantId": "aur-crp-008-v1",
+        "variantValue": "Emerald Green",
+        "variantName": "Color",
+        "variantQuantity": 15,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1554568218-0f1715e72254?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-out-009",
+    "route": "/product/aur-out-009",
+    "title": "Double-Breasted Trench Coat",
+    "description": "Timeless tan trench coat for a sophisticated winter look.",
+    "type": "Tailored Fit",
+    "category": "Outerwear",
+    "subcategory": [
+      "Coats",
+      "Winterwear"
+    ],
+    "tags": [
+      "Classic",
+      "Winter"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-OUT-009",
+    "materialType": "Wool Blend",
+    "weight": "1.5kg",
+    "variantQuantity": 8,
+    "hasVariants": true,
+    "mrp": 7999,
+    "sellingPrice": 5499,
+    "status": "Active",
+    "costPrice": 2500,
+    "profit": 2999,
+    "discountPercent": 31,
+    "discountAmount": 2500,
+    "variants": [
+      {
+        "variantId": "aur-out-009-v1",
+        "variantValue": "Tan",
+        "variantName": "Color",
+        "variantQuantity": 8,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-lug-010",
+    "route": "/product/aur-lug-010",
+    "title": "Handcrafted Mojari Juttis",
+    "description": "Traditional leather juttis with intricate mirror and thread work.",
+    "type": "Standard",
+    "category": "Footwear",
+    "subcategory": [
+      "Traditional",
+      "Flats"
+    ],
+    "tags": [
+      "Ethnic",
+      "Handmade"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1621996659490-3275b4d0d951?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-LUG-010",
+    "materialType": "Leather",
+    "weight": "0.6kg",
+    "variantQuantity": 20,
+    "hasVariants": true,
+    "mrp": 1599,
+    "sellingPrice": 999,
+    "status": "Active",
+    "costPrice": 400,
+    "profit": 599,
+    "discountPercent": 37,
+    "discountAmount": 600,
+    "variants": [
+      {
+        "variantId": "aur-lug-010-v1",
+        "variantValue": "Gold",
+        "variantName": "Color",
+        "variantQuantity": 20,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1621996659490-3275b4d0d951?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-top-012",
+    "route": "/product/aur-top-012",
+    "title": "Summer Breeze Floral Blouse",
+    "description": "Lightweight chiffon blouse with pastel floral patterns and ruffled sleeves.",
+    "type": "Slim Fit",
+    "category": "Tops",
+    "subcategory": [
+      "Blouses"
+    ],
+    "tags": [
+      "Summer",
+      "Casual"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-TOP-012",
+    "materialType": "Chiffon",
+    "weight": "0.15kg",
+    "variantQuantity": 40,
+    "hasVariants": true,
+    "mrp": 1499,
+    "sellingPrice": 899,
+    "status": "Active",
+    "costPrice": 300,
+    "profit": 599,
+    "discountPercent": 40,
+    "discountAmount": 600,
+    "variants": [
+      {
+        "variantId": "aur-top-012-v1",
+        "variantValue": "Pastel Mint",
+        "variantName": "Color",
+        "variantQuantity": 40,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-jns-013",
+    "route": "/product/aur-jns-013",
+    "title": "Charcoal Black Distressed Jeans",
+    "description": "Edgy charcoal denim with slight distressing at the knees for a bold look.",
+    "type": "Slim Fit",
+    "category": "Bottomwear",
+    "subcategory": [
+      "Jeans"
+    ],
+    "tags": [
+      "Trending",
+      "Streetwear"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-JNS-013",
+    "materialType": "Stretch Denim",
+    "weight": "0.65kg",
+    "variantQuantity": 20,
+    "hasVariants": true,
+    "mrp": 3299,
+    "sellingPrice": 2149,
+    "status": "Active",
+    "costPrice": 900,
+    "profit": 1249,
+    "discountPercent": 35,
+    "discountAmount": 1150,
+    "variants": [
+      {
+        "variantId": "aur-jns-013-v1",
+        "variantValue": "Charcoal",
+        "variantName": "Color",
+        "variantQuantity": 20,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-sne-014",
+    "route": "/product/aur-sne-014",
+    "title": "Urban Cloud Knit Sneakers",
+    "description": "Breathable knit sneakers with cushioned soles for all-day comfort.",
+    "type": "Sporty",
+    "category": "Footwear",
+    "subcategory": [
+      "Sneakers"
+    ],
+    "tags": [
+      "Comfort",
+      "Activewear"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-SNE-014",
+    "materialType": "Recycled Knit",
+    "weight": "0.5kg",
+    "variantQuantity": 15,
+    "hasVariants": true,
+    "mrp": 4999,
+    "sellingPrice": 2999,
+    "status": "Active",
+    "costPrice": 1200,
+    "profit": 1799,
+    "discountPercent": 40,
+    "discountAmount": 2000,
+    "variants": [
+      {
+        "variantId": "aur-sne-014-v1",
+        "variantValue": "Static Grey",
+        "variantName": "Color",
+        "variantQuantity": 15,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-kur-015",
+    "route": "/product/aur-kur-015",
+    "title": "Gold Dust Velvet Salwar Set",
+    "description": "Luxurious velvet salwar suit with gold gota-patti work for weddings.",
+    "type": "Regular Fit",
+    "category": "Traditional",
+    "subcategory": [
+      "Salwar Kameez"
+    ],
+    "tags": [
+      "Premium",
+      "Festive"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-KUR-015",
+    "materialType": "Velvet",
+    "weight": "1.1kg",
+    "variantQuantity": 10,
+    "hasVariants": false,
+    "mrp": 8999,
+    "sellingPrice": 5399,
+    "status": "Active",
+    "costPrice": 2200,
+    "profit": 3199,
+    "discountPercent": 40,
+    "discountAmount": 3600,
+    "variants": [
+      {
+        "variantId": "aur-kur-015-v1",
+        "variantValue": "Standard",
+        "variantName": "Size",
+        "variantQuantity": 10,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-hd-016",
+    "route": "/product/aur-hd-016",
+    "title": "Minimalist Oversized Hoodie",
+    "description": "Heavyweight fleece hoodie in a minimalist solid tone.",
+    "type": "Oversized",
+    "category": "Tops",
+    "subcategory": [
+      "Hoodies"
+    ],
+    "tags": [
+      "Winter",
+      "Cozy"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-HD-016",
+    "materialType": "Fleece Cotton",
+    "weight": "0.8kg",
+    "variantQuantity": 25,
+    "hasVariants": true,
+    "mrp": 2999,
+    "sellingPrice": 1799,
+    "status": "Active",
+    "costPrice": 600,
+    "profit": 1199,
+    "discountPercent": 40,
+    "discountAmount": 1200,
+    "variants": [
+      {
+        "variantId": "aur-hd-016-v1",
+        "variantValue": "Slate Blue",
+        "variantName": "Color",
+        "variantQuantity": 25,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-drs-017",
+    "route": "/product/aur-drs-017",
+    "title": "Midnight Satin Slip Dress",
+    "description": "Sleek and elegant satin slip dress with adjustable spaghetti straps.",
+    "type": "Slim Fit",
+    "category": "Dresses",
+    "subcategory": [
+      "Evening Wear"
+    ],
+    "tags": [
+      "Party Wear",
+      "Sexy"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-DRS-017",
+    "materialType": "Satin Silk",
+    "weight": "0.25kg",
+    "variantQuantity": 12,
+    "hasVariants": true,
+    "mrp": 3999,
+    "sellingPrice": 2399,
+    "status": "Active",
+    "costPrice": 800,
+    "profit": 1599,
+    "discountPercent": 40,
+    "discountAmount": 1600,
+    "variants": [
+      {
+        "variantId": "aur-drs-017-v1",
+        "variantValue": "Emerald",
+        "variantName": "Color",
+        "variantQuantity": 12,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-tsh-018",
+    "route": "/product/aur-tsh-018",
+    "title": "Retro Stripe Cotton Tee",
+    "description": "Vintage inspired horizontal stripe pattern on soft combed cotton.",
+    "type": "Regular Fit",
+    "category": "Tops",
+    "subcategory": [
+      "T-shirts"
+    ],
+    "tags": [
+      "Retro",
+      "Casual"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-TSH-018",
+    "materialType": "Cotton",
+    "weight": "0.2kg",
+    "variantQuantity": 50,
+    "hasVariants": true,
+    "mrp": 1299,
+    "sellingPrice": 649,
+    "status": "Active",
+    "costPrice": 200,
+    "profit": 449,
+    "discountPercent": 50,
+    "discountAmount": 650,
+    "variants": [
+      {
+        "variantId": "aur-tsh-018-v1",
+        "variantValue": "Navy Stripes",
+        "variantName": "Color",
+        "variantQuantity": 50,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-acc-019",
+    "route": "/product/aur-acc-019",
+    "title": "Handcrafted Leather Belt",
+    "description": "Classic tan leather belt with a brushed metallic buckle.",
+    "type": "Classic",
+    "category": "Accessories",
+    "subcategory": [
+      "Belts"
+    ],
+    "tags": [
+      "Premium",
+      "Essentials"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-ACC-019",
+    "materialType": "Full-Grain Leather",
+    "weight": "0.2kg",
+    "variantQuantity": 60,
+    "hasVariants": false,
+    "mrp": 1499,
+    "sellingPrice": 899,
+    "status": "Active",
+    "costPrice": 300,
+    "profit": 599,
+    "discountPercent": 40,
+    "discountAmount": 600,
+    "variants": [
+      {
+        "variantId": "aur-acc-019-v1",
+        "variantValue": "Standard",
+        "variantName": "Size",
+        "variantQuantity": 60,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-out-021",
+    "route": "/product/aur-out-021",
+    "title": "Classic Biker Leather Jacket",
+    "description": "Edgy black faux-leather jacket with silver hardware and quilted lining.",
+    "type": "Regular Fit",
+    "category": "Outerwear",
+    "subcategory": [
+      "Jackets"
+    ],
+    "tags": [
+      "Streetwear",
+      "Winter"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-OUT-021",
+    "materialType": "Faux Leather",
+    "weight": "0.9kg",
+    "variantQuantity": 12,
+    "hasVariants": true,
+    "mrp": 4999,
+    "sellingPrice": 3299,
+    "status": "Active",
+    "costPrice": 1200,
+    "profit": 2099,
+    "discountPercent": 34,
+    "discountAmount": 1700,
+    "variants": [
+      {
+        "variantId": "aur-out-021-v1",
+        "variantValue": "Onyx Black",
+        "variantName": "Color",
+        "variantQuantity": 12,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-kur-022",
+    "route": "/product/aur-kur-022",
+    "title": "Embroidered Chanderi Kurta",
+    "description": "Elegant Chanderi silk kurta with delicate floral thread work on the neckline.",
+    "type": "Straight Fit",
+    "category": "Traditional",
+    "subcategory": [
+      "Kurta"
+    ],
+    "tags": [
+      "Festive",
+      "Ethnic"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-KUR-022",
+    "materialType": "Chanderi Silk",
+    "weight": "0.4kg",
+    "variantQuantity": 20,
+    "hasVariants": false,
+    "mrp": 3499,
+    "sellingPrice": 2099,
+    "status": "Active",
+    "costPrice": 800,
+    "profit": 1299,
+    "discountPercent": 40,
+    "discountAmount": 1400,
+    "variants": [
+      {
+        "variantId": "aur-kur-022-v1",
+        "variantValue": "Standard",
+        "variantName": "Size",
+        "variantQuantity": 20,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-jns-023",
+    "route": "/product/aur-jns-023",
+    "title": "Wide Leg High-Rise Denim",
+    "description": "Light wash 90s style wide-leg jeans with a flattering high-waist fit.",
+    "type": "Wide Leg",
+    "category": "Bottomwear",
+    "subcategory": [
+      "Jeans"
+    ],
+    "tags": [
+      "Vintage",
+      "Daily Wear"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-JNS-023",
+    "materialType": "Denim Cotton",
+    "weight": "0.7kg",
+    "variantQuantity": 35,
+    "hasVariants": true,
+    "mrp": 2799,
+    "sellingPrice": 1899,
+    "status": "Active",
+    "costPrice": 600,
+    "profit": 1299,
+    "discountPercent": 32,
+    "discountAmount": 900,
+    "variants": [
+      {
+        "variantId": "aur-jns-023-v1",
+        "variantValue": "Light Blue",
+        "variantName": "Color",
+        "variantQuantity": 35,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-sne-025",
+    "route": "/product/aur-sne-025",
+    "title": "Platform Canvas High-Tops",
+    "description": "Classic white high-top sneakers with a chunky platform sole.",
+    "type": "Casual",
+    "category": "Footwear",
+    "subcategory": [
+      "Sneakers"
+    ],
+    "tags": [
+      "Trending",
+      "Comfort"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-SNE-025",
+    "materialType": "Canvas",
+    "weight": "0.85kg",
+    "variantQuantity": 25,
+    "hasVariants": true,
+    "mrp": 3999,
+    "sellingPrice": 2499,
+    "status": "Active",
+    "costPrice": 900,
+    "profit": 1599,
+    "discountPercent": 37,
+    "discountAmount": 1500,
+    "variants": [
+      {
+        "variantId": "aur-sne-025-v1",
+        "variantValue": "Eggshell White",
+        "variantName": "Color",
+        "variantQuantity": 25,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-drs-026",
+    "route": "/product/aur-drs-026",
+    "title": "Boho Tiered Midi Dress",
+    "description": "Relaxed floral midi dress with tiered skirt and balloon sleeves.",
+    "type": "Relaxed",
+    "category": "Dresses",
+    "subcategory": [
+      "Midi Dress"
+    ],
+    "tags": [
+      "Bohemian",
+      "Summer"
+    ],
+    "images": [
+      "/products/dress_boho_midi_floral_1776315066643.png"
+    ],
+    "SKU": "AUR-DRS-026",
+    "materialType": "Viscose Rayon",
+    "weight": "0.45kg",
+    "variantQuantity": 18,
+    "hasVariants": true,
+    "mrp": 3299,
+    "sellingPrice": 2199,
+    "status": "Active",
+    "costPrice": 750,
+    "profit": 1449,
+    "discountPercent": 33,
+    "discountAmount": 1100,
+    "variants": [
+      {
+        "variantId": "aur-drs-026-v1",
+        "variantValue": "Rust Floral",
+        "variantName": "Color",
+        "variantQuantity": 18,
+        "variantImage": [
+          "/products/dress_boho_midi_floral_1776315066643.png"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-lug-027",
+    "route": "/product/aur-lug-027",
+    "title": "Vegan Leather Tote Bag",
+    "description": "Spacious everyday tote with a padded laptop compartment and magnetic closure.",
+    "type": "Standard",
+    "category": "Accessories",
+    "subcategory": [
+      "Bags"
+    ],
+    "tags": [
+      "Workwear",
+      "Vegan"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-LUG-027",
+    "materialType": "Vegan Leather",
+    "weight": "0.8kg",
+    "variantQuantity": 40,
+    "hasVariants": true,
+    "mrp": 2999,
+    "sellingPrice": 1699,
+    "status": "Active",
+    "costPrice": 500,
+    "profit": 1199,
+    "discountPercent": 43,
+    "discountAmount": 1300,
+    "variants": [
+      {
+        "variantId": "aur-lug-027-v1",
+        "variantValue": "Caramel",
+        "variantName": "Color",
+        "variantQuantity": 40,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-skr-064",
+    "route": "/product/aur-skr-064",
+    "title": "Distressed Denim Midi Skirt",
+    "description": "High-waisted denim skirt with a front slit and frayed hem for a retro-modern look.",
+    "type": "Slim Fit",
+    "category": "Bottomwear",
+    "subcategory": [
+      "Skirts"
+    ],
+    "tags": [
+      "Streetwear",
+      "Vintage"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1582142306909-195724d33ffc?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-SKR-064",
+    "materialType": "Rigid Denim",
+    "weight": "0.5kg",
+    "variantQuantity": 25,
+    "hasVariants": true,
+    "mrp": 2499,
+    "sellingPrice": 1499,
+    "status": "Active",
+    "costPrice": 500,
+    "profit": 999,
+    "discountPercent": 40,
+    "discountAmount": 1000,
+    "variants": [
+      {
+        "variantId": "aur-skr-064-v1",
+        "variantValue": "Vintage Wash",
+        "variantName": "Color",
+        "variantQuantity": 25,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1582142306909-195724d33ffc?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-shw-065",
+    "route": "/product/aur-shw-065",
+    "title": "Royal Ivory Suit",
+    "description": "Exquisite raw silk sherwani with tonal resham embroidery, perfect for grooms.",
+    "type": "Tailored Fit",
+    "category": "Traditional",
+    "subcategory": [
+      "Sherwani"
+    ],
+    "tags": [
+      "Wedding Wear",
+      "Premium"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1597983073493-88cd35cf93b0?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-SHW-065",
+    "materialType": "Raw Silk",
+    "weight": "3.2kg",
+    "variantQuantity": 5,
+    "hasVariants": false,
+    "mrp": 34999,
+    "sellingPrice": 22749,
+    "status": "Active",
+    "costPrice": 9000,
+    "profit": 13749,
+    "discountPercent": 35,
+    "discountAmount": 12250,
+    "variants": [
+      {
+        "variantId": "aur-shw-065-v1",
+        "variantValue": "Standard",
+        "variantName": "Size",
+        "variantQuantity": 5,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1597983073493-88cd35cf93b0?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-kaf-066",
+    "route": "/product/aur-kaf-066",
+    "title": "Silk Batwing Kaftan",
+    "description": "Flowy satin silk kaftan with beaded neckline and gold foil prints.",
+    "type": "Oversized",
+    "category": "Dresses",
+    "subcategory": [
+      "Kaftans"
+    ],
+    "tags": [
+      "Resort Wear",
+      "Boho"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-KAF-066",
+    "materialType": "Satin Silk",
+    "weight": "0.4kg",
+    "variantQuantity": 15,
+    "hasVariants": true,
+    "mrp": 4299,
+    "sellingPrice": 2799,
+    "status": "Active",
+    "costPrice": 900,
+    "profit": 1900,
+    "discountPercent": 35,
+    "discountAmount": 1500,
+    "variants": [
+      {
+        "variantId": "aur-kaf-066-v1",
+        "variantValue": "Teal Blue",
+        "variantName": "Color",
+        "variantQuantity": 15,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-out-067",
+    "route": "/product/aur-out-067",
+    "title": "Heritage Varsity Jacket",
+    "description": "Wool-bodied varsity jacket with faux-leather sleeves and chenille patches.",
+    "type": "Regular Fit",
+    "category": "Outerwear",
+    "subcategory": [
+      "Jackets"
+    ],
+    "tags": [
+      "Streetwear",
+      "College"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-OUT-067",
+    "materialType": "Wool & Faux Leather",
+    "weight": "1.4kg",
+    "variantQuantity": 18,
+    "hasVariants": true,
+    "mrp": 5999,
+    "sellingPrice": 3899,
+    "status": "Active",
+    "costPrice": 1400,
+    "profit": 2499,
+    "discountPercent": 35,
+    "discountAmount": 2100,
+    "variants": [
+      {
+        "variantId": "aur-out-067-v1",
+        "variantValue": "Forest Green",
+        "variantName": "Color",
+        "variantQuantity": 18,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-sht-068",
+    "route": "/product/aur-sht-068",
+    "title": "Geometric Print Viscose Shirt",
+    "description": "Silky viscose shirt featuring a bold 70s-style geometric pattern.",
+    "type": "Relaxed Fit",
+    "category": "Shirts",
+    "subcategory": [
+      "Casual Shirts"
+    ],
+    "tags": [
+      "Retro",
+      "Summer"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-SHT-068",
+    "materialType": "Viscose Rayon",
+    "weight": "0.2kg",
+    "variantQuantity": 40,
+    "hasVariants": true,
+    "mrp": 1899,
+    "sellingPrice": 1149,
+    "status": "Active",
+    "costPrice": 350,
+    "profit": 799,
+    "discountPercent": 40,
+    "discountAmount": 750,
+    "variants": [
+      {
+        "variantId": "aur-sht-068-v1",
+        "variantValue": "Amber Gold",
+        "variantName": "Color",
+        "variantQuantity": 40,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-crd-070",
+    "route": "/product/aur-crd-070",
+    "title": "Active Dry-Fit Co-ord",
+    "description": "High-performance compression leggings and a matching sports crop top.",
+    "type": "Compression Fit",
+    "category": "Co-ord Sets",
+    "subcategory": [
+      "Activewear"
+    ],
+    "tags": [
+      "Gym",
+      "Sporty"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-CRD-070",
+    "materialType": "Spandex Nylon",
+    "weight": "0.6kg",
+    "variantQuantity": 30,
+    "hasVariants": true,
+    "mrp": 3999,
+    "sellingPrice": 2399,
+    "status": "Active",
+    "costPrice": 800,
+    "profit": 1599,
+    "discountPercent": 40,
+    "discountAmount": 1600,
+    "variants": [
+      {
+        "variantId": "aur-crd-070-v1",
+        "variantValue": "Electric Purple",
+        "variantName": "Color",
+        "variantQuantity": 30,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-bot-071",
+    "route": "/product/aur-bot-071",
+    "title": "Split Hem Tailored Pants",
+    "description": "Formal trousers with a subtle front slit at the hem to showcase footwear.",
+    "type": "Slim Fit",
+    "category": "Bottomwear",
+    "subcategory": [
+      "Trousers"
+    ],
+    "tags": [
+      "Office",
+      "Trending"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-BOT-071",
+    "materialType": "Polyester Viscose",
+    "weight": "0.4kg",
+    "variantQuantity": 20,
+    "hasVariants": true,
+    "mrp": 2999,
+    "sellingPrice": 1899,
+    "status": "Active",
+    "costPrice": 600,
+    "profit": 1299,
+    "discountPercent": 37,
+    "discountAmount": 1100,
+    "variants": [
+      {
+        "variantId": "aur-bot-071-v1",
+        "variantValue": "Slate Grey",
+        "variantName": "Color",
+        "variantQuantity": 20,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-drs-072",
+    "route": "/product/aur-drs-072",
+    "title": "Gingham Check Wrap Dress",
+    "description": "Classic black and white gingham dress with a functional side tie.",
+    "type": "Regular Fit",
+    "category": "Dresses",
+    "subcategory": [
+      "Day Dress"
+    ],
+    "tags": [
+      "Summer",
+      "Casual"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-DRS-072",
+    "materialType": "Cotton Seersucker",
+    "weight": "0.35kg",
+    "variantQuantity": 22,
+    "hasVariants": true,
+    "mrp": 2799,
+    "sellingPrice": 1649,
+    "status": "Active",
+    "costPrice": 450,
+    "profit": 1199,
+    "discountPercent": 41,
+    "discountAmount": 1150,
+    "variants": [
+      {
+        "variantId": "aur-drs-072-v1",
+        "variantValue": "Black Check",
+        "variantName": "Pattern",
+        "variantQuantity": 22,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-out-073",
+    "route": "/product/aur-out-073",
+    "title": "Sherpa Trucker Jacket",
+    "description": "Tan corduroy jacket fully lined with warm white sherpa fleece.",
+    "type": "Regular Fit",
+    "category": "Outerwear",
+    "subcategory": [
+      "Jackets"
+    ],
+    "tags": [
+      "Winter",
+      "Cozy"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1548126032-079a0fb0099d?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-OUT-073",
+    "materialType": "Corduroy",
+    "weight": "1.2kg",
+    "variantQuantity": 15,
+    "hasVariants": true,
+    "mrp": 5499,
+    "sellingPrice": 3599,
+    "status": "Active",
+    "costPrice": 1300,
+    "profit": 2299,
+    "discountPercent": 35,
+    "discountAmount": 1900,
+    "variants": [
+      {
+        "variantId": "aur-out-073-v1",
+        "variantValue": "Tobacco",
+        "variantName": "Color",
+        "variantQuantity": 15,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1548126032-079a0fb0099d?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+ 
+  {
+    "uuid": "aur-sut-075",
+    "route": "/product/aur-sut-075",
+    "title": "Double Breasted Pinstripe Suit",
+    "description": "Power suit in charcoal with light grey pinstripes and wide peak lapels.",
+    "type": "Slim Fit",
+    "category": "Formal Wear",
+    "subcategory": [
+      "Suits"
+    ],
+    "tags": [
+      "Professional",
+      "Luxury"
+    ],
+    "images": [
+      "/products/suit_double_breasted_charcoal_pinstripe_1776315659228.png"
+    ],
+    "SKU": "AUR-SUT-075",
+    "materialType": "Wool Silk Blend",
+    "weight": "2.5kg",
+    "variantQuantity": 6,
+    "hasVariants": true,
+    "mrp": 18999,
+    "sellingPrice": 12349,
+    "status": "Active",
+    "costPrice": 4000,
+    "profit": 8349,
+    "discountPercent": 35,
+    "discountAmount": 6650,
+    "variants": [
+      {
+        "variantId": "aur-sut-075-v1",
+        "variantValue": "Charcoal Pinstripe",
+        "variantName": "Color",
+        "variantQuantity": 6,
+        "variantImage": [
+          "/products/suit_double_breasted_charcoal_pinstripe_1776315659228.png"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-sht-076",
+    "route": "/product/aur-sht-076",
+    "title": "Seersucker Striped Shirt",
+    "description": "Textured cotton seersucker shirt that stays cool in high humidity.",
+    "type": "Regular Fit",
+    "category": "Shirts",
+    "subcategory": [
+      "Casual Shirts"
+    ],
+    "tags": [
+      "Summer",
+      "Travel"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1602810316693-3667c854239a?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-SHT-076",
+    "materialType": "Seersucker Cotton",
+    "weight": "0.2kg",
+    "variantQuantity": 45,
+    "hasVariants": true,
+    "mrp": 2199,
+    "sellingPrice": 1429,
+    "status": "Active",
+    "costPrice": 400,
+    "profit": 1029,
+    "discountPercent": 35,
+    "discountAmount": 770,
+    "variants": [
+      {
+        "variantId": "aur-sht-076-v1",
+        "variantValue": "Mint Green",
+        "variantName": "Color",
+        "variantQuantity": 45,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1602810316693-3667c854239a?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-bot-077",
+    "route": "/product/aur-bot-077",
+    "title": "Utility Parachute Pants",
+    "description": "Ultra-lightweight nylon pants with adjustable drawcords at waist and ankles.",
+    "type": "Baggy",
+    "category": "Bottomwear",
+    "subcategory": [
+      "Trousers"
+    ],
+    "tags": [
+      "Gorpcore",
+      "Gen-Z"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-BOT-077",
+    "materialType": "Ripstop Nylon",
+    "weight": "0.3kg",
+    "variantQuantity": 35,
+    "hasVariants": true,
+    "mrp": 3299,
+    "sellingPrice": 1979,
+    "status": "Active",
+    "costPrice": 550,
+    "profit": 1429,
+    "discountPercent": 40,
+    "discountAmount": 1320,
+    "variants": [
+      {
+        "variantId": "aur-bot-077-v1",
+        "variantValue": "Jet Black",
+        "variantName": "Color",
+        "variantQuantity": 35,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-drs-078",
+    "route": "/product/aur-drs-078",
+    "title": "Draped Cowl-Neck Slip",
+    "description": "Elegant silk slip dress with a deep cowl neck and adjustable cross-back straps.",
+    "type": "Slim Fit",
+    "category": "Dresses",
+    "subcategory": [
+      "Evening Wear"
+    ],
+    "tags": [
+      "Sexy",
+      "Minimalist"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1612336307429-8a898d10e223?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-DRS-078",
+    "materialType": "Pure Silk",
+    "weight": "0.25kg",
+    "variantQuantity": 12,
+    "hasVariants": true,
+    "mrp": 5999,
+    "sellingPrice": 3599,
+    "status": "Active",
+    "costPrice": 1100,
+    "profit": 2499,
+    "discountPercent": 40,
+    "discountAmount": 2400,
+    "variants": [
+      {
+        "variantId": "aur-drs-078-v1",
+        "variantValue": "Champagne Gold",
+        "variantName": "Color",
+        "variantQuantity": 12,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1612336307429-8a898d10e223?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-crd-079",
+    "route": "/product/aur-crd-079",
+    "title": "Summer Knit Polo Set",
+    "description": "Short-sleeve knitted polo and matching ribbed shorts in a lightweight cotton yarn.",
+    "type": "Regular Fit",
+    "category": "Co-ord Sets",
+    "subcategory": [
+      "Summer Wear"
+    ],
+    "tags": [
+      "Clean Style",
+      "Trending"
+    ],
+    "images": [
+      "/products/summer_knit_polo_set_pastel_1776315518522.png"
+    ],
+    "SKU": "AUR-CRD-079",
+    "materialType": "Cotton Knit",
+    "weight": "0.7kg",
+    "variantQuantity": 18,
+    "hasVariants": true,
+    "mrp": 4599,
+    "sellingPrice": 2999,
+    "status": "Active",
+    "costPrice": 950,
+    "profit": 2049,
+    "discountPercent": 35,
+    "discountAmount": 1600,
+    "variants": [
+      {
+        "variantId": "aur-crd-079-v1",
+        "variantValue": "Pastel Blue",
+        "variantName": "Color",
+        "variantQuantity": 18,
+        "variantImage": [
+          "/products/summer_knit_polo_set_pastel_1776315518522.png"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-out-080",
+    "route": "/product/aur-out-080",
+    "title": "Cropped Denim Biker Jacket",
+    "description": "Edgy denim jacket with oversized lapels and silver hardware zippers.",
+    "type": "Slim Fit",
+    "category": "Outerwear",
+    "subcategory": [
+      "Jackets"
+    ],
+    "tags": [
+      "Grunge",
+      "Streetwear"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-OUT-080",
+    "materialType": "Heavy Denim",
+    "weight": "0.9kg",
+    "variantQuantity": 20,
+    "hasVariants": true,
+    "mrp": 3999,
+    "sellingPrice": 2399,
+    "status": "Active",
+    "costPrice": 700,
+    "profit": 1699,
+    "discountPercent": 40,
+    "discountAmount": 1600,
+    "variants": [
+      {
+        "variantId": "aur-out-080-v1",
+        "variantValue": "Stone Wash Black",
+        "variantName": "Color",
+        "variantQuantity": 20,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-shw-081",
+    "route": "/product/aur-shw-081",
+    "title": "Zari Work Jodhpuri Suit",
+    "description": "Formal Jodhpuri coat with intricate gold zari work on the collar and cuffs.",
+    "type": "Regular Fit",
+    "category": "Bottomwear",
+    "subcategory": [
+      "Sherwani"
+    ],
+    "tags": [
+      "Festive",
+      "Groom Wear"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-SHW-081",
+    "materialType": "Brocade Silk",
+    "weight": "2.5kg",
+    "variantQuantity": 3,
+    "hasVariants": false,
+    "mrp": 27999,
+    "sellingPrice": 18199,
+    "status": "Active",
+    "costPrice": 7500,
+    "profit": 10699,
+    "discountPercent": 35,
+    "discountAmount": 9800,
+    "variants": [
+      {
+        "variantId": "aur-shw-081-v1",
+        "variantValue": "Standard",
+        "variantName": "Size",
+        "variantQuantity": 3,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-sht-082",
+    "route": "/product/aur-sht-082",
+    "title": "Grandad Collar Linen Shirt",
+    "description": "Collarless shirt in a soft linen-cotton blend for a relaxed weekend look.",
+    "type": "Relaxed Fit",
+    "category": "Shirts",
+    "subcategory": [
+      "Casual Shirts"
+    ],
+    "tags": [
+      "Minimalist",
+      "Summer"
+    ],
+    "images": [
+      "/products/shirt_linen_grandad_blue_1776315042647.png"
+    ],
+    "SKU": "AUR-SHT-082",
+    "materialType": "Linen Cotton",
+    "weight": "0.25kg",
+    "variantQuantity": 50,
+    "hasVariants": true,
+    "mrp": 1999,
+    "sellingPrice": 1299,
+    "status": "Active",
+    "costPrice": 400,
+    "profit": 899,
+    "discountPercent": 35,
+    "discountAmount": 700,
+    "variants": [
+      {
+        "variantId": "aur-sht-082-v1",
+        "variantValue": "Pure White",
+        "variantName": "Color",
+        "variantQuantity": 50,
+        "variantImage": [
+          "/products/shirt_linen_grandad_blue_1776315042647.png"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-bot-083",
+    "route": "/product/aur-bot-083",
+    "title": "Side-Stripe Luxe Joggers",
+    "description": "Tailored joggers with a contrasting side panel and pin-tuck details.",
+    "type": "Slim Fit",
+    "category": "Bottomwear",
+    "subcategory": [
+      "Joggers"
+    ],
+    "tags": [
+      "Athleisure",
+      "Clean Style"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-BOT-083",
+    "materialType": "Scuba Fabric",
+    "weight": "0.6kg",
+    "variantQuantity": 25,
+    "hasVariants": true,
+    "mrp": 3499,
+    "sellingPrice": 2279,
+    "status": "Active",
+    "costPrice": 750,
+    "profit": 1529,
+    "discountPercent": 35,
+    "discountAmount": 1220,
+    "variants": [
+      {
+        "variantId": "aur-bot-083-v1",
+        "variantValue": "Deep Maroon",
+        "variantName": "Color",
+        "variantQuantity": 25,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-tsh-084",
+    "route": "/product/aur-tsh-084",
+    "title": "Graphic Boxy Tee",
+    "description": "Heavyweight cotton tee with a retro 'Cyber' back print and dropped shoulders.",
+    "type": "Oversized",
+    "category": "Shirts",
+    "subcategory": [
+      "T-Shirts"
+    ],
+    "tags": [
+      "Streetwear",
+      "Gen-Z"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-TSH-084",
+    "materialType": "240 GSM Cotton",
+    "weight": "0.4kg",
+    "variantQuantity": 100,
+    "hasVariants": true,
+    "mrp": 1499,
+    "sellingPrice": 899,
+    "status": "Active",
+    "costPrice": 300,
+    "profit": 599,
+    "discountPercent": 40,
+    "discountAmount": 600,
+    "variants": [
+      {
+        "variantId": "aur-tsh-084-v1",
+        "variantValue": "Charcoal",
+        "variantName": "Color",
+        "variantQuantity": 100,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-drs-085",
+    "route": "/product/aur-drs-085",
+    "title": "Sun-Drenched Midi Dress",
+    "description": "Breathable yellow linen dress with spaghetti straps and wood-button details.",
+    "type": "Relaxed Fit",
+    "category": "Dresses",
+    "subcategory": [
+      "Midi Dress"
+    ],
+    "tags": [
+      "Summer",
+      "Vacation"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-DRS-085",
+    "materialType": "Pure Linen",
+    "weight": "0.3kg",
+    "variantQuantity": 40,
+    "hasVariants": true,
+    "mrp": 2999,
+    "sellingPrice": 1799,
+    "status": "Active",
+    "costPrice": 550,
+    "profit": 1249,
+    "discountPercent": 40,
+    "discountAmount": 1200,
+    "variants": [
+      {
+        "variantId": "aur-drs-085-v1",
+        "variantValue": "Mustard Yellow",
+        "variantName": "Color",
+        "variantQuantity": 40,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-leh-088",
+    "route": "/product/aur-leh-088",
+    "title": "Sequinned Net Lehenga",
+    "description": "Modern lehenga with all-over silver sequins and a sheer tulle dupatta.",
+    "type": "Flared",
+    "category": "Traditional",
+    "subcategory": [
+      "Lehenga"
+    ],
+    "tags": [
+      "Cocktail Wear",
+      "Party Wear"
+    ],
+    "images": [
+      "/products/lehenga_sequin_silver_1776315166402.png"
+    ],
+    "SKU": "AUR-LEH-088",
+    "materialType": "Net with Sequins",
+    "weight": "2.5kg",
+    "variantQuantity": 5,
+    "hasVariants": false,
+    "mrp": 45000,
+    "sellingPrice": 40000,
+    "status": "Active",
+    "costPrice": 5500,
+    "profit": 10749,
+    "discountPercent": 5,
+    "discountAmount": 5000,
+    "variants": [
+      {
+        "variantId": "aur-leh-088-v1",
+        "variantValue": "Standard",
+        "variantName": "Size",
+        "variantQuantity": 5,
+        "variantImage": [
+          "/products/lehenga_sequin_silver_1776315166402.png"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-sht-089",
+    "route": "/product/aur-sht-089",
+    "title": "Abstract Art Rayon Shirt",
+    "description": "Vibrant short-sleeve shirt with a hand-painted abstract pattern.",
+    "type": "Relaxed Fit",
+    "category": "Shirts",
+    "subcategory": [
+      "Casual Shirts"
+    ],
+    "tags": [
+      "Artistic",
+      "Vacation"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-SHT-089",
+    "materialType": "Rayon",
+    "weight": "0.2kg",
+    "variantQuantity": 60,
+    "hasVariants": true,
+    "mrp": 1799,
+    "sellingPrice": 1099,
+    "status": "Active",
+    "costPrice": 350,
+    "profit": 749,
+    "discountPercent": 39,
+    "discountAmount": 700,
+    "variants": [
+      {
+        "variantId": "aur-sht-089-v1",
+        "variantValue": "Multi-color",
+        "variantName": "Pattern",
+        "variantQuantity": 60,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-crd-090",
+    "route": "/product/aur-crd-090",
+    "title": "Fleece Travel Co-ord",
+    "description": "Matching oversized hoodie and joggers set in ultra-soft brushed fleece.",
+    "type": "Oversized",
+    "category": "Co-ord Sets",
+    "subcategory": [
+      "Lounge Wear"
+    ],
+    "tags": [
+      "Travel",
+      "Cozy"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-CRD-090",
+    "materialType": "Cotton Fleece",
+    "weight": "1.1kg",
+    "variantQuantity": 20,
+    "hasVariants": true,
+    "mrp": 4999,
+    "sellingPrice": 2999,
+    "status": "Active",
+    "costPrice": 1000,
+    "profit": 1999,
+    "discountPercent": 40,
+    "discountAmount": 2000,
+    "variants": [
+      {
+        "variantId": "aur-crd-090-v1",
+        "variantValue": "Cloud Grey",
+        "variantName": "Color",
+        "variantQuantity": 20,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-sut-091",
+    "route": "/product/aur-sut-091",
+    "title": "Emerald Green Velvet Suit",
+    "description": "Luxury 2-piece velvet suit with a peak lapel blazer and tailored slim trousers.",
+    "type": "Slim Fit",
+    "category": "Formal Wear",
+    "subcategory": [
+      "Suits"
+    ],
+    "tags": [
+      "Gala",
+      "Luxury"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-SUT-091",
+    "materialType": "Silk Velvet",
+    "weight": "2.2kg",
+    "variantQuantity": 8,
+    "hasVariants": true,
+    "mrp": 15999,
+    "sellingPrice": 10399,
+    "status": "Active",
+    "costPrice": 4000,
+    "profit": 6399,
+    "discountPercent": 35,
+    "discountAmount": 5600,
+    "variants": [
+      {
+        "variantId": "aur-sut-091-v1",
+        "variantValue": "Emerald",
+        "variantName": "Color",
+        "variantQuantity": 8,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-drs-092",
+    "route": "/product/aur-drs-092",
+    "title": "Tie-Back Maxi Sundress",
+    "description": "Floor-length cotton dress with an open back and adjustable bow tie.",
+    "type": "Flared",
+    "category": "Dresses",
+    "subcategory": [
+      "Maxi Dress"
+    ],
+    "tags": [
+      "Beach",
+      "Floral"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1518049362265-d5b2a6467637?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-DRS-092",
+    "materialType": "Cotton",
+    "weight": "0.45kg",
+    "variantQuantity": 15,
+    "hasVariants": true,
+    "mrp": 3799,
+    "sellingPrice": 2279,
+    "status": "Active",
+    "costPrice": 700,
+    "profit": 1579,
+    "discountPercent": 40,
+    "discountAmount": 1520,
+    "variants": [
+      {
+        "variantId": "aur-drs-092-v1",
+        "variantValue": "Tropical Print",
+        "variantName": "Pattern",
+        "variantQuantity": 15,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1518049362265-d5b2a6467637?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-bot-093",
+    "route": "/product/aur-bot-093",
+    "title": "Technical Cargo Shorts",
+    "description": "Nylon utility shorts with multiple zipper pockets and integrated belt.",
+    "type": "Relaxed Fit",
+    "category": "Bottomwear",
+    "subcategory": [
+      "Shorts"
+    ],
+    "tags": [
+      "Hiking",
+      "Gorpcore"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-BOT-093",
+    "materialType": "Ripstop Nylon",
+    "weight": "0.3kg",
+    "variantQuantity": 50,
+    "hasVariants": true,
+    "mrp": 2199,
+    "sellingPrice": 1319,
+    "status": "Active",
+    "costPrice": 450,
+    "profit": 869,
+    "discountPercent": 40,
+    "discountAmount": 880,
+    "variants": [
+      {
+        "variantId": "aur-bot-093-v1",
+        "variantValue": "Tan",
+        "variantName": "Color",
+        "variantQuantity": 50,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-sht-094",
+    "route": "/product/aur-sht-094",
+    "title": "Denim Western Shirt",
+    "description": "Mid-weight indigo denim shirt with pearl snap buttons and pointed yokes.",
+    "type": "Regular Fit",
+    "category": "Shirts",
+    "subcategory": [
+      "Casual Shirts"
+    ],
+    "tags": [
+      "Workwear",
+      "Vintage"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-SHT-094",
+    "materialType": "Denim Cotton",
+    "weight": "0.5kg",
+    "variantQuantity": 45,
+    "hasVariants": true,
+    "mrp": 2599,
+    "sellingPrice": 1689,
+    "status": "Active",
+    "costPrice": 600,
+    "profit": 1089,
+    "discountPercent": 35,
+    "discountAmount": 910,
+    "variants": [
+      {
+        "variantId": "aur-sht-094-v1",
+        "variantValue": "Indigo Wash",
+        "variantName": "Color",
+        "variantQuantity": 45,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-leh-096",
+    "route": "/product/aur-leh-096",
+    "title": "Chikankari Cotton Lehenga",
+    "description": "Breathable white cotton lehenga with intricate shadow embroidery.",
+    "type": "Flared",
+    "category": "Traditional",
+    "subcategory": [
+      "Lehenga"
+    ],
+    "tags": [
+      "Summer Wedding",
+      "Ethnic"
+    ],
+    "images": [
+      "/products/lehenga_chikankari_white_1776315024440.png"
+    ],
+    "SKU": "AUR-LEH-096",
+    "materialType": "Cotton Lucknowi",
+    "weight": "1.5kg",
+    "variantQuantity": 10,
+    "hasVariants": false,
+    "mrp": 12999,
+    "sellingPrice": 8449,
+    "status": "Active",
+    "costPrice": 3000,
+    "profit": 5449,
+    "discountPercent": 35,
+    "discountAmount": 4550,
+    "variants": [
+      {
+        "variantId": "aur-leh-096-v1",
+        "variantValue": "Standard",
+        "variantName": "Size",
+        "variantQuantity": 10,
+        "variantImage": [
+          "/products/lehenga_chikankari_white_1776315024440.png"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-sht-097",
+    "route": "/product/aur-sht-097",
+    "title": "Satin Pajama Shirt",
+    "description": "Relaxed pajama-style shirt with contrast piping and chest pocket.",
+    "type": "Relaxed Fit",
+    "category": "Shirts",
+    "subcategory": [
+      "Casual Shirts"
+    ],
+    "tags": [
+      "Lounge",
+      "Silky"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1598554747436-c9293d6a588f?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-SHT-097",
+    "materialType": "Polyester Satin",
+    "weight": "0.2kg",
+    "variantQuantity": 30,
+    "hasVariants": true,
+    "mrp": 1999,
+    "sellingPrice": 1199,
+    "status": "Active",
+    "costPrice": 400,
+    "profit": 799,
+    "discountPercent": 40,
+    "discountAmount": 800,
+    "variants": [
+      {
+        "variantId": "aur-sht-097-v1",
+        "variantValue": "Navy Blue",
+        "variantName": "Color",
+        "variantQuantity": 30,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1598554747436-c9293d6a588f?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-bot-098",
+    "route": "/product/aur-bot-098",
+    "title": "Embroidered Mom Jeans",
+    "description": "Classic mom fit jeans with small floral embroidery on the pockets.",
+    "type": "Mom Fit",
+    "category": "Bottomwear",
+    "subcategory": [
+      "Jeans"
+    ],
+    "tags": [
+      "Cute",
+      "Retro"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1475180098004-ca77a66827be?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-BOT-098",
+    "materialType": "Cotton Denim",
+    "weight": "0.65kg",
+    "variantQuantity": 25,
+    "hasVariants": true,
+    "mrp": 3499,
+    "sellingPrice": 2099,
+    "status": "Active",
+    "costPrice": 750,
+    "profit": 1349,
+    "discountPercent": 40,
+    "discountAmount": 1400,
+    "variants": [
+      {
+        "variantId": "aur-bot-098-v1",
+        "variantValue": "Light Blue",
+        "variantName": "Color",
+        "variantQuantity": 25,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1475180098004-ca77a66827be?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-crd-099",
+    "route": "/product/aur-crd-099",
+    "title": "Waffle Knit Lounge Set",
+    "description": "Breathable waffle-texture top and matching joggers for relaxing at home.",
+    "type": "Relaxed Fit",
+    "category": "Co-ord Sets",
+    "subcategory": [
+      "Lounge Wear"
+    ],
+    "tags": [
+      "Minimalist",
+      "Comfort"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-CRD-099",
+    "materialType": "Cotton Waffle",
+    "weight": "0.9kg",
+    "variantQuantity": 40,
+    "hasVariants": true,
+    "mrp": 2999,
+    "sellingPrice": 1949,
+    "status": "Active",
+    "costPrice": 600,
+    "profit": 1349,
+    "discountPercent": 35,
+    "discountAmount": 1050,
+    "variants": [
+      {
+        "variantId": "aur-crd-099-v1",
+        "variantValue": "Sage Green",
+        "variantName": "Color",
+        "variantQuantity": 40,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-out-100",
+    "route": "/product/aur-out-100",
+    "title": "Classic Harrington Jacket",
+    "description": "Timeless jacket with tartan lining and a buttoned funnel neck.",
+    "type": "Regular Fit",
+    "category": "Outerwear",
+    "subcategory": [
+      "Jackets"
+    ],
+    "tags": [
+      "Classic",
+      "Modern Men"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-OUT-100",
+    "materialType": "Cotton Twill",
+    "weight": "0.75kg",
+    "variantQuantity": 20,
+    "hasVariants": true,
+    "mrp": 4299,
+    "sellingPrice": 2799,
+    "status": "Active",
+    "costPrice": 900,
+    "profit": 1899,
+    "discountPercent": 35,
+    "discountAmount": 1500,
+    "variants": [
+      {
+        "variantId": "aur-out-100-v1",
+        "variantValue": "Black",
+        "variantName": "Color",
+        "variantQuantity": 20,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-drs-101",
+    "route": "/product/aur-drs-101",
+    "title": "Pleated Halter Gown",
+    "description": "Stunning evening gown with a pleated skirt and metallic gold halter neck.",
+    "type": "A-Line",
+    "category": "Dresses",
+    "subcategory": [
+      "Evening Wear"
+    ],
+    "tags": [
+      "Glam",
+      "Formal"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-DRS-101",
+    "materialType": "Chiffon",
+    "weight": "0.8kg",
+    "variantQuantity": 12,
+    "hasVariants": true,
+    "mrp": 6499,
+    "sellingPrice": 4229,
+    "status": "Active",
+    "costPrice": 1500,
+    "profit": 2729,
+    "discountPercent": 35,
+    "discountAmount": 2270,
+    "variants": [
+      {
+        "variantId": "aur-drs-101-v1",
+        "variantValue": "Royal Blue",
+        "variantName": "Color",
+        "variantQuantity": 12,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "uuid": "aur-sht-102",
+    "route": "/product/aur-sht-102",
+    "title": "Flannel Over-Shirt",
+    "description": "Thick checkered over-shirt to be worn over tees for extra warmth.",
+    "type": "Regular Fit",
+    "category": "Shirts",
+    "subcategory": [
+      "Casual Shirts"
+    ],
+    "tags": [
+      "Streetwear",
+      "Winter"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&q=80&auto=format&fit=crop"
+    ],
+    "SKU": "AUR-SHT-102",
+    "materialType": "Cotton Flannel",
+    "weight": "0.5kg",
+    "variantQuantity": 40,
+    "hasVariants": true,
+    "mrp": 2499,
+    "sellingPrice": 1499,
+    "status": "Active",
+    "costPrice": 500,
+    "profit": 999,
+    "discountPercent": 40,
+    "discountAmount": 1000,
+    "variants": [
+      {
+        "variantId": "aur-sht-102-v1",
+        "variantValue": "Green Check",
+        "variantName": "Pattern",
+        "variantQuantity": 40,
+        "variantImage": [
+          "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&q=80&auto=format&fit=crop"
+        ]
+      }
+    ],
+    "reviews": []
+  }
+]

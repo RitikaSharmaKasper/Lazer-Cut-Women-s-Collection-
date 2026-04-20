@@ -1,0 +1,239 @@
+import { ArrowRight, BadgeCheck, ChevronDown, Info, ShieldCheck } from "lucide-react";
+import React, { useState } from "react";
+import { formatPrice } from "../utils/homePageUtils";
+import { Link } from "react-router"; 
+import { motion } from "framer-motion";
+
+function PriceDetails({
+  totalItems,
+  totalPrice,
+  totalDiscount,
+  product,
+  hasOutOfStock,
+  step = "cart", 
+  canProceed = true,
+  handlePlaceOrder,
+  buyNowMode,
+  goToPayment,
+}) {
+  const [deliveryCharge, setDeliveryCharge] = useState(60);
+  const [showPrice, setShowPrice] = useState(false);
+  const deliveryLimit = 1000;
+  const rewardsMinOrderAmount = 2000;
+  const rewardsStorageKey = "customerRewards";
+
+  // Rewards: unlock perks at 100 points
+  const subtotal = totalPrice - totalDiscount;
+  const rewardsData = JSON.parse(localStorage.getItem(rewardsStorageKey) || "{}");
+  const rewardPoints = Number(rewardsData.points || 0);
+  const isRewardsEligibleOrder = subtotal >= rewardsMinOrderAmount;
+  const hasRewardsPerk = rewardPoints >= 100 && isRewardsEligibleOrder;
+  const loyaltyDiscount = hasRewardsPerk ? Math.round(subtotal * 0.1) : 0;
+  const pointsToUnlock = Math.max(0, 100 - rewardPoints);
+
+  const isFree = subtotal >= deliveryLimit || hasRewardsPerk;
+
+  return (
+    <div className="w-full lg:w-1/3">
+      <div className="bg-white md:rounded-lg shadow-sm p-4 md:p-6 sticky top-20 font-inter">
+        <>
+          {/* Header */}
+          <div className="flex justify-between items-center">
+            <h2 className="text-base md:text-lg lg:text-xl font-medium text-gray-800">
+              Price Summary
+            </h2>
+            <button
+              onClick={() => setShowPrice(!showPrice)}
+              className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              aria-expanded={showPrice}
+            >
+              <ChevronDown
+                className={`transform transition-transform duration-300 ${
+                  showPrice ? "rotate-180" : "rotate-0"
+                }`}
+              />
+            </button>
+          </div>
+
+          <div className="text-sm sm:text-base">
+            {/* Price Breakdown */}
+            <motion.div
+              initial={false}
+              animate={{
+                height: showPrice ? "auto" : 0,
+                opacity: showPrice ? 1 : 0,
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="overflow-hidden"
+            >
+              <div className="space-y-4 bg-[#F8F8F8] rounded-lg px-2 py-1">
+                {/* Items */}
+                <div className="flex justify-between border-t border-gray-200 pt-4 mt-4">
+                  <span className="text-gray-600 font-medium">
+                    Price ({totalItems} {totalItems > 1 ? "items" : "item"})
+                  </span>
+                  <span className="font-medium">{formatPrice(totalPrice)}</span>
+                </div>
+
+                {/* Discount */}
+                <div className="flex justify-between">
+                  <span className="text-[#00A63E] font-medium">Discount</span>
+                  <span className="text-green-600 font-medium">
+                    - {formatPrice(totalDiscount)}
+                    {/* {console.log(totalDiscount)} */}
+                  </span>
+                </div>
+
+                {/* Platform Fee */}
+                <div className="flex justify-between">
+                  <span className="text-gray-600 font-medium">
+                    Platform Fee
+                  </span>
+                  <span className="font-medium">₹6</span>
+                </div>
+
+                {/* Delivery */}
+                <div className="flex justify-between">
+                  <span className="text-gray-600 font-medium">
+                    Delivery Charges
+                  </span>
+                  <span
+                    className={`font-medium ${
+                      !isFree
+                        ? "text-gray-800"
+                        : "text-green-600"
+                    }`}
+                  >
+                    {!isFree ? (
+                      `₹${deliveryCharge.toFixed(2)}`
+                    ) : (
+                      <span className="flex items-center gap-1">
+                        <BadgeCheck className="w-4 h-4" /> FREE
+                      </span>
+                    )}
+                  </span>
+                </div>
+
+                {/* Loyalty Discount */}
+                {hasRewardsPerk && (
+                  <div className="flex justify-between">
+                    <span className="text-[#00A63E] font-medium">
+                      Loyalty Discount (10%)
+                    </span>
+                    <span className="text-green-600 font-medium">
+                      - {formatPrice(loyaltyDiscount)}
+                    </span>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+
+            {/* Total Amount */}
+            <div className="border-t border-gray-200 pt-4 mt-4 flex justify-between text-base sm:text-lg font-semibold text-gray-900">
+              <span>Total Amount</span>
+              <span>
+                {formatPrice(
+                  subtotal -
+                    loyaltyDiscount +
+                    (!isFree ? deliveryCharge : 0) +
+                    6
+                )}
+              </span>
+            </div>
+          </div>
+
+          {/* Savings & Shipping Info */}
+          <div className="mt-6 p-3 bg-[#F8F8F8] rounded-lg flex items-start gap-2">
+            <Info className="text-[#1C3753] mt-0.5 flex-shrink-0" size={16} />
+            <div>
+              <p className="text-[#1C3753] font-medium text-sm sm:text-base">
+                You're saving ₹{totalDiscount.toLocaleString("en-IN")} on this
+                order!
+              </p>
+              
+              {hasRewardsPerk ? (
+                <p className="text-[#D49A06] font-bold text-xs sm:text-sm mt-1 flex items-center gap-1">
+                  <BadgeCheck size={14} /> Rewards Perk Active: 10% Discount + Free Shipping.
+                </p>
+              ) : subtotal < deliveryLimit ? (
+                <p className="text-gray-500 text-xs sm:text-sm mt-1">
+                  Add {formatPrice(deliveryLimit - subtotal)} more for <span className="text-green-600 font-medium">Free Delivery</span>
+                </p>
+              ) : (
+                <p className="text-green-600 font-medium text-xs sm:text-sm mt-1">
+                  Congratulations! Your order qualifies for Free Delivery.
+                </p>
+              )}
+              {!hasRewardsPerk && isRewardsEligibleOrder && (
+                <p className="text-gray-500 text-xs sm:text-sm mt-1">
+                  {`${pointsToUnlock} more reward points needed to unlock 10% loyalty discount + free shipping.`}
+                </p>
+              )}
+            </div>
+          </div>
+
+          <div className="mt-3 p-3 bg-[#EEF4FA] rounded-lg border border-[#D5E5F5]">
+            <p className="text-[#1C3753] font-medium text-sm sm:text-base">
+              Your Reward Points: <span className="font-bold">{rewardPoints}</span>
+            </p>
+            {rewardPoints < 100 ? (
+              <p className="text-gray-600 text-xs sm:text-sm mt-1">
+                {pointsToUnlock} points left to unlock 10% discount + free shipping.
+              </p>
+            ) : (
+              <p className="text-green-700 text-xs sm:text-sm mt-1">
+                You have enough points. Place order above ₹2000 to use 10% discount + free shipping.
+              </p>
+            )}
+            <p className="text-[#1C3753] text-xs sm:text-sm mt-1">
+              On this order, you will earn <span className="font-semibold">20 points</span>.
+            </p>
+          </div>
+
+          {/* Payment Security */}
+          <div className="mt-2 pt-4 border-t border-gray-200 flex items-center justify-between gap-2 text-xs sm:text-sm text-gray-500">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="text-gray-400" size={16} />
+              <span>100% secure payments</span>
+            </div>
+            <div className="my-2">
+              {step === "cart" &&
+                (hasOutOfStock ? (
+                  <p className="text-red-600 text-sm font-medium">
+                    Remove or save out-of-stock items to continue checkout
+                  </p>
+                ) : (
+                  <Link
+                    to="/checkout/delivery"
+                    className="bg-[#1C3753] rounded-lg hover:bg-black text-white md:px-8 md:py-3 px-4 py-2 text-base font-medium transition-colors flex items-center gap-2"
+                  >
+                    Proceed to Checkout 
+                  </Link>
+                ))}
+
+              {step === "delivery" && canProceed && (
+                <button
+                  onClick={goToPayment}
+                  className="bg-[#1C3753] rounded-lg hover:bg-black text-white md:px-8 md:py-3 px-4 py-2 text-base font-medium transition-colors flex items-center gap-2"
+                >
+                  Proceed to Checkout
+                </button>
+              )}
+
+              {step === "payment" && (
+                <button
+                  onClick={handlePlaceOrder}
+                  className="bg-[#1C3753] rounded-lg hover:bg-black text-white md:px-8 md:py-3 px-4 py-2 text-base font-medium transition-colors flex items-center gap-2 whitespace-nowrap"
+                >
+                  {buyNowMode ? "Buy Now & Pay" : "Place Order"} <ArrowRight size={16}></ArrowRight>
+                </button>
+              )}
+            </div>
+          </div>
+        </>
+      </div>
+    </div>
+  );
+}
+
+export default PriceDetails;
