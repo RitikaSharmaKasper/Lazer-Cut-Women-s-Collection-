@@ -31,7 +31,25 @@ const accountDetails = [
 function UserProfile({ setIsProfileOpen }) {
   //  Redux state
   const { user, isAuthenticated } = useSelector((state) => state.user);
+  const [localPoints, setLocalPoints] = useState(0);
 
+  // 2. useEffect lagayein jo storage se latest value fetch kare
+  useEffect(() => {
+    const getLatestPoints = () => {
+      // Pehle Redux check karo
+      if (user?.rewardPoints !== undefined && user?.rewardPoints !== null) {
+        setLocalPoints(user.rewardPoints);
+      } else {
+        // Agar redux khali hai toh localStorage check karo
+        const stored = JSON.parse(localStorage.getItem("customerRewards") || '{"points":0}');
+        setLocalPoints(Number(stored.points || 0));
+      }
+    };
+
+    getLatestPoints();
+  }, [user, setIsProfileOpen]); // Jab drawer khule ya user badle, tab refresh ho
+console.log("Current User State:", user);
+console.log("Local Storage Points:", localStorage.getItem("customerRewards"));
   // console.log(user);
   // console.log(isAuthenticated);
   return (
@@ -60,7 +78,17 @@ function UserProfile({ setIsProfileOpen }) {
         <div className="flex flex-col items-end">
           <span className="text-xs text-gray-500 uppercase font-semibold tracking-wider">Rewards</span>
           <span className="text-lg font-bold text-[#D53B35]">
-            {user?.rewardPoints !== undefined ? user.rewardPoints : Number(JSON.parse(localStorage.getItem("customerRewards") || "{}").points || 0)}
+           {/* {user?.rewardPoints || Number(JSON.parse(localStorage.getItem("customerRewards") || '{"points":0}').points) || 0} */}
+        {
+      // 1. Pehle check karo kya Redux mein 0 se bada koi point hai?
+      user?.rewardPoints > 0 
+        ? user.rewardPoints 
+        : (
+            // 2. Agar Redux mein points nahi hain, toh Local Storage check karo
+            JSON.parse(localStorage.getItem("customerRewards") || '{"points":0}').points || 0
+          )
+    }
+        
           </span>
         </div>
       </div>

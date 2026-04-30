@@ -13,7 +13,7 @@ const initialState = {
   error: null,
 };
 
-// 🔹 Thunks
+
 export const loginUser = createAsyncThunk(
   "user/login",
   async (credentials, thunkAPI) => {

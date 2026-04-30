@@ -68,7 +68,7 @@ const CancelItemsPage = () => {
       points: updatedLocalPoints
     }));
 
-    // Update backend rewards
+  
     if (user) {
       const currentUserPoints = user.rewardPoints !== undefined ? user.rewardPoints : currentLocalPoints;
       const newPoints = Math.max(0, currentUserPoints - 20);

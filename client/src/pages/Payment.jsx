@@ -874,3 +874,12 @@ price:
 }
 
 export default Payment;
+
+
+
+
+
+
+
+
+

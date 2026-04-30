@@ -249,17 +249,17 @@ const FestiveOccasions = () => {
                 </div>
 
                 {/* Floating Info Card */}
-                <div className="absolute right-0 w-[50%] bg-white shadow-2xl z-20 rounded-3xl p-4 border border-gray-100 transition-all duration-500 group-hover/card:-translate-x-4">
-                  <h3 className="text-[12px] font-bold text-[#1C3753] uppercase tracking-widest line-clamp-1 mb-2">
+                <div className="absolute right-0 mt-[17rem] w-[50%] h-[27%] bg-white shadow-2xl z-20 rounded-3xl p-3 border border-gray-100 transition-all duration-500 group-hover/card:-translate-x-[-2rem]">
+                  <h3 className="text-[10px] font-bold text-[#1C3753] uppercase tracking-widest line-clamp-1 mb-1">
                     {getTitle(p)}
                   </h3>
                   
-                  <div className="mb-3">
+                  <div className="mb-2">
                     <Rating value={4.5} readOnly size="small" sx={{ color: "#FFD700" }} />
                   </div>
 
                   <div className="flex flex-col gap-1">
-                    <span className="text-2xl font-black text-[#1C3753]">
+                    <span className="text-lg font-black text-[#1C3753]">
                       ₹{getSelling(p).toLocaleString()}
                     </span>
                     {getMrp(p) > getSelling(p) && (
