@@ -2,6 +2,7 @@ import React, { useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router";
 import { cancelOrderItems } from "../redux/cart/orderSlice"; // create this action
+import { updateUserDetails } from "../redux/cart/userSlice";
 
 const CancelItemsPage = () => {
   const { orderId } = useParams();
@@ -12,6 +13,7 @@ const CancelItemsPage = () => {
   const [customReason, setCustomReason] = useState("");
 
   const orders = useSelector((s) => s.order.list);
+  const user = useSelector((state) => state.user.user);
   const order = useMemo(
     () => orders?.find((o) => o.orderId.slice(1) === orderId),
     [orders, orderId],
@@ -44,14 +46,6 @@ const CancelItemsPage = () => {
   const handleConfirm = () => {
     if (selectedCount === 0) return;
 
-    // const itemsToCancel = Object.entries(selected).map(([idx, qty]) => {
-    //   const item = order.items[Number(idx)];
-    //   return {
-    //     itemId: item.itemId || item.variantId || item.uuid || idx, // use best unique key
-    //     qty: Number(qty),
-    //   };
-    // });
-
     const itemsToCancel = Object.entries(selected).map(([idx, qty]) => ({
       idx: Number(idx),
       qty: Number(qty),
@@ -63,6 +57,23 @@ const CancelItemsPage = () => {
         itemsToCancel,
       }),
     );
+
+    // Update local storage rewards
+    const localRewards = JSON.parse(localStorage.getItem("customerRewards") || "{}");
+    const currentLocalPoints = Number(localRewards.points || 0);
+    const updatedLocalPoints = Math.max(0, currentLocalPoints - 20);
+    
+    localStorage.setItem("customerRewards", JSON.stringify({
+      ...localRewards,
+      points: updatedLocalPoints
+    }));
+
+    // Update backend rewards
+    if (user) {
+      const currentUserPoints = user.rewardPoints !== undefined ? user.rewardPoints : currentLocalPoints;
+      const newPoints = Math.max(0, currentUserPoints - 20);
+      dispatch(updateUserDetails({ rewardPoints: newPoints }));
+    }
 
     navigate(`/accounts/order-detail/${orderId}`);
   };

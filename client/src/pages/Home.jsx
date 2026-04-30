@@ -6,6 +6,7 @@ import Collection from '../components/homecomponents/Collection'
 import Products from '../sections/Products'
 import Footer from '../sections/Footer'
 import Design from '../components/homecomponents/Design'
+import BrandBanner from '../components/BrandBanner'
 
 function HomePage() {
     const { hash } = useLocation();
@@ -24,10 +25,13 @@ function HomePage() {
     return (
         <>
             <Navbar/>
+             
             <Hero/>
+             <BrandBanner/>
             <Collection/>
             <Design/>
             <Products/>
+          
             <Footer/>
         </>
     )

@@ -19,7 +19,8 @@ function Footer() {
   };
 
   return (
-    <section className="lg:px-20 md:px-[60px] px-4 py-12 bg-[#0F2942] text-white border-t border-[#23486D]">
+    <>
+      <section className="lg:px-20 md:px-[60px] px-4 py-12 bg-[#0F2942] text-white border-t border-[#23486D]">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
         <div className="lg:col-span-2 flex flex-col gap-3">
           <Link to="/" className="w-fit">
@@ -105,6 +106,7 @@ function Footer() {
         </p>
       </div>
     </section>
+    </>
   );
 }
 

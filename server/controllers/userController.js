@@ -13,11 +13,11 @@ export const updateUserDetails = async (req, res) => {
     }
 
     const userId = req.user._id;
-    const { name, dateOfBirth, gender, alternateMobile } = req.body;
+    const { name, dateOfBirth, gender, alternateMobile, rewardPoints } = req.body;
 
     const updatedUser = await User.findByIdAndUpdate(
       userId,
-      { name, dateOfBirth, gender, alternateMobile },
+      { name, dateOfBirth, gender, alternateMobile, rewardPoints },
       { new: true, runValidators: true },
     );
 
@@ -41,6 +41,7 @@ export const getUserDetails = async (req, res) => {
       alternateMobile: user.alternateMobile,
       profileImage: user.profileImage,
       role: user.role,
+      rewardPoints: user.rewardPoints,
     });
   } catch (err) {
     console.error("Error getting user details:", err);

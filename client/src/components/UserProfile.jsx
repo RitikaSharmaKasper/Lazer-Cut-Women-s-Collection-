@@ -37,7 +37,7 @@ function UserProfile({ setIsProfileOpen }) {
   return (
     <div className="h-max md:w-[413px] sm:w-[350px] w-[280px] overflow-hidden mx-auto bg-white z-50">
       {/* Top section: user icon and welcome message */}
-      <div className="flex gap-4 items-center px-4 py-5 border-b border-gray-200 cursor-default">
+      <div className="flex justify-between items-center px-4 py-5 border-b border-gray-200 cursor-default">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-[#D5E5F5] flex items-center justify-center">
             {user?.profileImage ? (
@@ -56,6 +56,12 @@ function UserProfile({ setIsProfileOpen }) {
               {isAuthenticated ? "Welcome back!" : "Please log in"}
             </p>
           </div>
+        </div>
+        <div className="flex flex-col items-end">
+          <span className="text-xs text-gray-500 uppercase font-semibold tracking-wider">Rewards</span>
+          <span className="text-lg font-bold text-[#D53B35]">
+            {user?.rewardPoints !== undefined ? user.rewardPoints : Number(JSON.parse(localStorage.getItem("customerRewards") || "{}").points || 0)}
+          </span>
         </div>
       </div>
 

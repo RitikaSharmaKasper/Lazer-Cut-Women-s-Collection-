@@ -28,6 +28,7 @@ const userSchema = new mongoose.Schema(
     dateOfBirth: { type: String },
     gender: { type: String, enum: ["male", "female"], required: false },
     alternateMobile: { type: String },
+    rewardPoints: { type: Number, default: 0 },
   },
   {
     timestamps: true,
